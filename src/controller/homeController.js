@@ -1,10 +1,10 @@
 import pool from '../configs/connectDB';
 
 
-let getHomepage = async (req, res) => {
-    const [rows, fields] = await pool.execute('SELECT * FROM users');
+let getHomePage = async (req, res) => {
+    const [rows, fields] = await pool.execute('SELECT * FROM brand');
 
-    return res.render('index.ejs', { dataUser: rows, test: 'abc string test' })
+    return res.render('pages/index.ejs', { dataBrand: rows, test: 'abc string test' })
 }
 
 let getDetailPage = async (req, res) => {
@@ -44,5 +44,5 @@ let postUpdateUser = async (req, res) => {
 }
 
 module.exports = {
-    getHomepage, getDetailPage, createNewUser, deleteUser, getEditPage, postUpdateUser
+    getHomePage, getDetailPage, createNewUser, deleteUser, getEditPage, postUpdateUser
 }
