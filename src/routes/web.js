@@ -1,6 +1,6 @@
 import express from "express";
-import homeController from '../controller/homeController'
-import brandController from '../controller/brandController'
+import homeController from '../controllers/homeController'
+import brandController from '../controllers/brandController'
 
 let router = express.Router();
 
