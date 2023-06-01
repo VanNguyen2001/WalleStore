@@ -5,7 +5,7 @@ import brandController from '../controller/brandController'
 let router = express.Router();
 
 const initWebRoute = (app) => {
-    router.get('/', brandController.getBrandPage);
+    router.get('/', homeController.getHomePage);
 
     router.get('/detail/user/:id', homeController.getDetailPage);
     router.post('/create-new-user', homeController.createNewUser);
@@ -20,12 +20,12 @@ const initWebRoute = (app) => {
     router.post('/update-brand', brandController.postUpdateBrand);
 
 
-    
+
 
     router.get('/about', (req, res) => {
         res.send('My!')
     })
-    
+
     return app.use('/', router)
 }
 
