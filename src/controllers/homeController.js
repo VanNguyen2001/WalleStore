@@ -1,10 +1,17 @@
 import pool from '../configs/connectDB';
 
 
-let getHomePage = async (req, res) => {
-    const [rows, fields] = await pool.execute('SELECT * FROM brand');
+let getAdminPage = async (req, res) => {
+    const [rows, fields] = await pool.execute('SELECT * FROM users');
 
-    return res.render('pages/index.ejs', { dataBrand: rows, test: 'abc string test' })
+    return res.render('admin/user__list.ejs', { dataUser: rows, test: 'abc string test' })
+}
+
+let getHomePage = async (req, res) => {
+    const [rows] = await pool.execute('SELECT * FROM category');
+    const [roll] = await pool.execute('SELECT * FROM brand');
+
+    return res.render('pages/index.ejs', { dataCategory: rows, dataBrand: roll})
 }
 
 let getDetailPage = async (req, res) => {
@@ -31,7 +38,7 @@ let deleteUser = async (req, res) => {
 let getEditPage = async (req, res) => {
     let id = req.params.id;
     let [user] = await pool.execute('Select * from users where id = ?', [id]);
-    return res.render('update.ejs', { dataUser: user[0] }); // x <- y
+    return res.render('admin/update__user.ejs', { dataUser: user[0] }); // x <- y
 }
 
 let postUpdateUser = async (req, res) => {
@@ -44,5 +51,5 @@ let postUpdateUser = async (req, res) => {
 }
 
 module.exports = {
-    getHomePage, getDetailPage, createNewUser, deleteUser, getEditPage, postUpdateUser
+    getAdminPage, getHomePage, getDetailPage, createNewUser, deleteUser, getEditPage, postUpdateUser
 }
