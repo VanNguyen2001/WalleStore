@@ -1,68 +1,80 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Danh Mục Hãng Điện Thoại</title>
-    <link rel="stylesheet" href="/css/style.css"></link>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danh Mục Hãng Điện Thoại</title>
+  <link rel="stylesheet" href="/css/style.css">
+  </link>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+
 <body>
-    <div class="container">
-        <h2 class="text-center p-5">Danh Mục Các Hãng Điện Thoại</h2>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">Tên Hãng</th>
-                <th scope="col">Mổ Tả</th>
-                <th scope="col">Đường dẫn</th>
-                <th scope="col">Logo Đại Diện</th>
-                <th class="text-center" scope="col">Tuỳ chọn</th>
-              </tr>
-            </thead>
-            <tbody>
-                <% for(let i=0; i < dataBrand.length; i++) { %>
-                <tr>
-                    <td><%= dataBrand[i].name %></td>
-                    <td><%= dataBrand[i].describe %></td>
-                    <td><%= dataBrand[i].link %></td>
-                    <td><img src="/img/<%= dataBrand[i].logo %>" width="50px" height="50px" style="border-radius: 5px;"></td>
-                    <td>
-                      <div class="row">
-                        <form class="col-md-6" action="/edit-brand/<%= dataBrand[i].id %>" method="GET">
-                          <button type="submit" class="btn btn-dark">Xem</button>
-                        </form>
-                        <form class="col-md-6" action="/delete-brand" method="post">
-                          <input type="text" hidden value="<%= dataBrand[i].id %>" name="brandId"/>
-                          <button type="submit" class="btn btn-dark">Xoá</button>
-                        </form>
-                      </div>
-                    </td>
-                </tr>
-                <% } %>
-            </tbody>
-          </table>
-          <div class="row">
-            <form action="/create-new-brand" method="POST" class="col-md-6 offset-md-3 pt-5">
-                <div class="form-group">
-                <label for="exampleInputEmail1">Tên Hãng</label>
-                <input type="text" class="form-control" placeholder="Nhập tên của hãng" name="name">
+  <div class="container">
+    <%- include("menu.ejs")%>
+      <h2 class="text-center p-5">Danh Mục Các Hãng Điện Thoại</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Tên Hãng</th>
+            <th scope="col">Mổ Tả</th>
+            <th scope="col">Đường dẫn</th>
+            <th scope="col">Logo Đại Diện</th>
+            <th class="text-center" scope="col">Tuỳ chọn</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for(let i=0; i < dataBrand.length; i++) { %>
+            <tr>
+              <td>
+                <%= dataBrand[i].name %>
+              </td>
+              <td>
+                <%= dataBrand[i].describe %>
+              </td>
+              <td>
+                <%= dataBrand[i].link %>
+              </td>
+              <td><img src="/img/<%= dataBrand[i].logo %>" width="50px" height="50px" style="border-radius: 5px;"></td>
+              <td>
+                <div class="row">
+                  <form class="col-md-6" action="/edit-brand/<%= dataBrand[i].id %>" method="GET">
+                    <button type="submit" class="btn btn-dark">Xem</button>
+                  </form>
+                  <form class="col-md-6" action="/delete-brand" method="post">
+                    <input type="text" hidden value="<%= dataBrand[i].id %>" name="brandId" />
+                    <button type="submit" class="btn btn-dark">Xoá</button>
+                  </form>
                 </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Thông Tin Thêm</label>
-                    <input type="text" class="form-control" placeholder="Thêm mô tả" name="describe">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Đường Dẫn</label>
-                    <input type="text" class="form-control" placeholder="Nhập đường dẫn" name="link">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Hình Đại Diện</label>
-                    <input type="file" class="form-control" placeholder="Chọn hình đại diện" name="logo">
-                </div>
-                <button type="submit" class="btn btn-primary">Thêm</button>
-            </form>
+              </td>
+            </tr>
+            <% } %>
+        </tbody>
+      </table>
+      <div class="row">
+        <form action="/create-new-brand" method="POST" class="col-md-6 offset-md-3 pt-5">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Tên Hãng</label>
+            <input type="text" class="form-control" placeholder="Nhập tên của hãng" name="name">
           </div>
-    </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Thông Tin Thêm</label>
+            <input type="text" class="form-control" placeholder="Thêm mô tả" name="describe">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Đường Dẫn</label>
+            <input type="text" class="form-control" placeholder="Nhập đường dẫn" name="link">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Hình Đại Diện</label>
+            <input type="file" class="form-control" placeholder="Chọn hình đại diện" name="logo">
+          </div>
+          <button type="submit" class="btn btn-primary">Thêm</button>
+        </form>
+      </div>
+  </div>
 </body>
+
 </html>

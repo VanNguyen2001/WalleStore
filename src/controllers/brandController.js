@@ -19,13 +19,13 @@ let createNewBrand = async (req, res) => {
     await pool.execute('INSERT INTO `brand`(`name`, `describe`, `link`, `logo`) VALUES (?, ?, ?, ?)',
         [name, describe, link, logo]);
 
-    return res.redirect('/')
+    return res.redirect('/brand__list')
 }
 
 let deleteBrand = async (req, res) => {
     let brandId = req.body.brandId;
     await pool.execute('delete from brand where id = ?', [brandId])
-    return res.redirect('/');
+    return res.redirect('/brand__list');
 }
 
 let getEditBrandPage = async (req, res) => {
@@ -40,7 +40,7 @@ let postUpdateBrand = async (req, res) => {
     await pool.execute('UPDATE `brand` SET `name`= ? ,`describe`= ?,`link`= ? ,`logo`= ? WHERE `id`= ?',
         [name, describe, link, logo, id]);
 
-    return res.redirect('/');
+    return res.redirect('/brand__list');
 }
 
 module.exports = {
