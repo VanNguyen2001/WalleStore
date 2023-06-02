@@ -80,8 +80,8 @@
                     <% for(let i=0; i < dataCategory.length; i++) { %>
                     <div class="col-md-3 category__group category__line p-4">
                         <img src="/img/<%= dataCategory[i].image %>" alt="" class="category__img">
-                        <h3 class="category__title">Điện Thoại</h3>
-                        <p class="category__description">Nhiều mẫu mã, mày sắc, nhãng hàng khác nhau. Tha hồ mua sắm và lựa chọn.</p>
+                        <h3 class="category__title"><%= dataCategory[i].name %></h3>
+                        <p class="category__description"><%= dataCategory[i].describe %></p>
                         <a href="#" class="quality__button">
                             Xem
                             <i class='bx bx-right-arrow-alt'></i>
