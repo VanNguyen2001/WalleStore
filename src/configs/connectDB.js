@@ -5,7 +5,7 @@ import mysql from 'mysql2/promise';
 console.log("Creating connection pool...");
 
 const pool = mysql.createPool({
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
     database: 'nodejsbasic',
     // password: 'password'
