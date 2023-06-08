@@ -1,0 +1,20 @@
+<%- include("header.ejs")%>
+<div class="container">
+    <form action="/create-new-category" method="POST" class="">
+        <div class="form-group">
+        <label>Tên Danh Mục</label>
+        <input type="text" class="form-control" placeholder="Nhập tên của hãng" name="name">
+        </div>
+        <div class="form-group">
+            <label>Mô Tả</label>
+            <input type="text" class="form-control" placeholder="Thêm mô tả" name="describe">
+        </div>
+        <div class="form-group">
+            <label>Hình Minh Hoạ</label>
+            <input type="file" class="form-control" placeholder="Chọn hình minh hoạ" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm</button>
+        <a href="/category-list" class="btn btn-dark">Trở Về</a>
+    </form>
+  </div>
+<%- include("footer.ejs")%>

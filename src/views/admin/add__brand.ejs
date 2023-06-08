@@ -1,0 +1,25 @@
+<%- include("header.ejs")%>
+<div class="container">
+    <h4>Thêm Mới Hãng</h4>
+    <form action="/create-new-brand" method="POST" class="">
+        <div class="form-group">
+        <label for="exampleInputEmail1">Tên Hãng</label>
+        <input type="text" class="form-control" placeholder="Nhập tên của hãng" name="name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Thông Tin Thêm</label>
+            <input type="text" class="form-control" placeholder="Thêm mô tả" name="describe">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Đường Dẫn</label>
+            <input type="text" class="form-control" placeholder="Nhập đường dẫn" name="link">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Hình Đại Diện</label>
+            <input type="file" class="form-control" placeholder="Chọn hình đại diện" name="logo">
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm</button>
+        <a href="/brand-list" class="btn btn-dark">Trở Về</a>
+    </form>
+</div>
+<%- include("footer.ejs")%>

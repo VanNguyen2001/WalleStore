@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <%- include("style.ejs")%>
+</head>
+<body>
+    <div id="sidebar">
+        <div class="sidebar-logo text-center">
+            <img src="/img/wallestore-admin-logo.png">
+        </div>
+        <ul class="navbar-nav navbar-nav-scroll">
+            <li><a href="brand-list"><i class="fa fa-bell"></i>Thống Kê</a></li>
+            <li><a href="brand-list"><i class="fa-brands fa-shopify"></i>Sản Phẩm</a></li>
+            <li><a href="category-list"><i class="fa-solid fa-tags"></i>Danh Mục</a></li>
+            <li><a href="brand-list"><i class="fa-solid fa-star"></i>Hãng</a></li>
+            <li><a href="brand-list"><i class="fa-solid fa-shop"></i>Kho</a></li>
+            <li><a href="brand-list"><i class="fa-solid fa-truck-fast"></i>Đơn Hàng</a></li>
+            <li><a href="brand-list"><i class="fa-solid fa-truck-moving"></i>Đơn Nhập</a></li>
+            <li class="view"><a href="home"><i class="fa fa-house-laptop"></i>Cửa Hàng</a></li>
+        </ul>
+        <div class="sidebar-logout text-center p-4">
+            <a asp-controller="Users" asp-action="Login" class="btn">Đăng Xuất</a>
+        </div>
+    </div>
+    <div id="menu-controll">
+        <nav class="navbar navbar-expand-lg navbar-light shadow">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul id="menu" class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a href="/" class="nav-link">Tài Khoản</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a asp-controller="Home" asp-action="Index" class="nav-link">Giới Thiệu</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a asp-controller="Home" asp-action="Index" class="nav-link"><i class="fa fa-info-circle"></i></a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a asp-controller="Home" asp-action="Index" class="nav-link"><i class="fa fa-cog"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div id="container-controll" class="container-fluid home">
+        <main role="main" class="pb-3"></main>
