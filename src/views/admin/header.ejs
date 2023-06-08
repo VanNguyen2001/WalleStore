@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admin</title>
     <%- include("style.ejs")%>
 </head>
+
 <body>
     <div id="sidebar">
         <div class="sidebar-logo text-center">
@@ -13,7 +15,7 @@
         </div>
         <ul class="navbar-nav navbar-nav-scroll">
             <li><a href="brand-list"><i class="fa fa-bell"></i>Thống Kê</a></li>
-            <li><a href="brand-list"><i class="fa-brands fa-shopify"></i>Sản Phẩm</a></li>
+            <li><a href="product-list"><i class="fa-brands fa-shopify"></i>Sản Phẩm</a></li>
             <li><a href="category-list"><i class="fa-solid fa-tags"></i>Danh Mục</a></li>
             <li><a href="brand-list"><i class="fa-solid fa-star"></i>Hãng</a></li>
             <li><a href="brand-list"><i class="fa-solid fa-shop"></i>Kho</a></li>
@@ -28,7 +30,9 @@
     <div id="menu-controll">
         <nav class="navbar navbar-expand-lg navbar-light shadow">
             <div class="container">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
@@ -40,7 +44,8 @@
                             <a asp-controller="Home" asp-action="Index" class="nav-link">Giới Thiệu</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a asp-controller="Home" asp-action="Index" class="nav-link"><i class="fa fa-info-circle"></i></a>
+                            <a asp-controller="Home" asp-action="Index" class="nav-link"><i
+                                    class="fa fa-info-circle"></i></a>
                         </li>
                         <li class="nav-item dropdown">
                             <a asp-controller="Home" asp-action="Index" class="nav-link"><i class="fa fa-cog"></i></a>

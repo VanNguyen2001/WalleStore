@@ -1,0 +1,42 @@
+<%- include("header.ejs")%>
+    <div class="container">
+        <h2 class="">Danh Mục Sản Phẩm</h2>
+        <a href="/add-product" class="btn btn-dark">Thêm Mới Sản Phẩm</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">Ảnh Sản phẩm</th>
+                    <th scope="col">Tên Sản Phẩm</th>
+                    <th scope="col">Mô Tả Sản Phẩm</th>
+                    <th class="text-center" scope="col">Tuỳ chọn</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < dataProduct.length; i++) { %>
+                    <tr>
+                        <td class="text-center">
+                            <img src="/img/<%= dataProduct[i].image %>" width="50px" style="border-radius: 5px;">
+                        </td>
+                        <td>
+                            <%= dataProduct[i].name %>
+                        </td>
+                        <td>
+                            <%= dataProduct[i].describe %>
+                        </td>
+                        <td class="text-center">
+                            <div class="row">
+                                <form class="col-md-6" action="/edit-product/<%= dataProduct[i].id %>" method="GET">
+                                    <button type="submit" class="btn btn-dark">Xem</button>
+                                </form>
+                                <form class="col-md-6" action="/delete-product" method="post">
+                                    <input type="text" hidden value="<%= dataProduct[i].id %>" name="productId" />
+                                    <button type="submit" class="btn btn-dark">Xoá</button>
+                                </form>
+                            </div>
+                        </td>
+                    </tr>
+                    <% } %>
+            </tbody>
+        </table>
+    </div>
+    <%- include("footer.ejs")%>
