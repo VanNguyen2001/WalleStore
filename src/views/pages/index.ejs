@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,539 +11,451 @@
     <link rel="shortcut icon" href="/img/wallestore-logo.png" type="image/x-icon">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-	<title>WalleStore - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>WalleStore - Home</title>
 </head>
+
 <body>
-  <%- include("../partials/load.ejs")%>
-  <%- include("../partials/header.ejs")%>
-    <main class="main" id="main">
-        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="/img/carousel1.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Nhiều Mẫu Mã, Nhãng Hàng Khác Nhau</h5>
-                        <p>Vô vàng các loại điện thoại, laptop với nhiều kiểu dáng, màu sắc khác nhau.</p>
-                        <a href="" class="btn btn-dark mt-3">Hốt Ngay</a>
+    <%- include("../partials/load.ejs")%>
+        <%- include("../partials/header.ejs")%>
+            <main class="main" id="main">
+                <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
                     </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="/img/carousel2.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Thiên Đường Di Động Của Giới Trẻ</h5>
-                        <p>Đầy đủ tất cả mọi loại phụ tùng liên quan đến công nghệ.</p>
-                        <a href="" class="btn btn-dark mt-3">Lượm Ngay</a>
-                    </div>
-                </div>
-
-                <div class="carousel-item">
-                    <img src="/img/carousel3.png" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Thế Giới Điện Máy Di Động</h5>
-                        <p>Tivi, tủ lạnh, bàn ủi, máy bơm, bala bala.</p>
-                        <a href="" class="btn btn-dark mt-3">Chụp Ngay</a>
-                    </div>
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-
-        <div class="category" id="category">
-            <div class="container category__data">
-                <div class="row">
-                    <div class="col-md-9">
-                        <h2 class="section__title category__title__ha">
-                            Danh mục các loại sản phẩm có tại cửa hàng!
-                        </h2>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <a href="#" class="btn btn-dark">Xem thêm</a>
-                    </div>
-                </div>
-
-                <div class="row justify-content-center category__category">
-                    <% for(let i=0; i < dataCategory.length; i++) { %>
-                    <div class="col-md-3 category__group category__line p-4">
-                        <img src="/img/<%= dataCategory[i].image %>" alt="" class="category__img">
-                        <h3 class="category__title">Điện Thoại</h3>
-                        <p class="category__description">Nhiều mẫu mã, mày sắc, nhãng hàng khác nhau. Tha hồ mua sắm và lựa chọn.</p>
-                        <a href="#" class="quality__button">
-                            Xem
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    </div>
-                    <% } %>
-                </div>
-            </div>
-        </div>
-
-        <div class="hamster" id="hot">
-            <div class="container hamster__data">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section__title category__title__ha">
-                            Sản phẩm nổi bật.
-                        </h2>
-                    </div>
-                    <div class="row products__filters">
-                        <div class="col-md-4 products__item products__line active-product"  data-filter=".delicacies">
-                            <h3 class="products__title">Điện Thoại Di Động</h3>
-                            <span class="products_stock">3 Loại</span>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/img/carousel1.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Nhiều Mẫu Mã, Nhãng Hàng Khác Nhau</h5>
+                                <p>Vô vàng các loại điện thoại, laptop với nhiều kiểu dáng, màu sắc khác nhau.</p>
+                                <a href="" class="btn btn-dark mt-3">Hốt Ngay</a>
+                            </div>
                         </div>
-                        <div class="col-md-4 products__item products__line"  data-filter=".coffee">
-                            <h3 class="products__title">Máy Tính Bảng</h3>
-                            <span class="products_stock">3 Loại</span>
+
+                        <div class="carousel-item">
+                            <img src="/img/carousel2.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Thiên Đường Di Động Của Giới Trẻ</h5>
+                                <p>Đầy đủ tất cả mọi loại phụ tùng liên quan đến công nghệ.</p>
+                                <a href="" class="btn btn-dark mt-3">Lượm Ngay</a>
+                            </div>
                         </div>
-                        <div class="col-md-4 products__item"  data-filter=".cake">
-                            <h3 class="products__title">Máy Tính Cá Nhân</h3>
-                            <span class="products_stock">3 Loại</span>
-                        </div>
-                    </div>
 
-                    <div class="products__content grid row">
-                        <!--==================== WW ====================-->
-                        <article class="products__card delicacies col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card delicacies col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone2.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">Samsung Galaxy S22 Ultra 5G</h2>
-                                <h3 class="products__price">Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Đỏ, trắng, đen, xanh lá.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card delicacies col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone3.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 14 Pro Max</h2>
-                                <h3 class="products__price">Chính 48 MP & Phụ 12 MP, 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Đen, tím, vàng, bạc.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-                        <!--==================== ROBO ====================-->
-                        <article class="products__card coffee col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card coffee col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card coffee col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <!--==================== BEAR ====================-->
-                        <article class="products__card cake col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card cake col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card cake col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-                        <a href="#" class="quality__button p-3">
-                            Xem nhiều hơn
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="premium" id="premium">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="section__title quality__title">
-                            Ưu đãi mới dành cho người may mắn khi mua sắm tại cửa hàng!
-                        </h2>
-                    </div>
-                    <div class="row quality__content grid">
-                        <div class="col-md-6 quality__images text-center">
-                            <img src="/img/quality1.jpg" alt="" class="quality__img-big">
-                            <img src="/img/quality2.jpg" alt="" class="quality__img-small">
-                        </div>
-                        <div class="col-md-6 quality__data">
-                            <h1 class="quality__title">Tivi Sony</h1>
-                            <h2 class="quality__price">40.000.000vnd</h2>
-                            <span class="quality__special">Ưu đãi đặc biệt dành cho bạn Hoàng.</span>
-                            <p class="quality__description">
-                                Khi mua tivi sony tại của hàng, khách hàng sẽ được ưu đãi nhận thêm một số món quà từ cửa hàng, ngoài ra còn có thể nhận thêm một số vật dụng và một tai nghe sony vô cùng dễ thương.
-                            </p>
-                            <div class="quality__buttons">
-                                <button class="btn btn-dark">
-                                    Mua Ngay
-                                </button>
-    
-                                <a href="#" class="quality__button">
-                                    Xem thêm
-                                    <i class='bx bx-right-arrow-alt'></i>
-                                </a>
+                        <div class="carousel-item">
+                            <img src="/img/carousel3.png" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Thế Giới Điện Máy Di Động</h5>
+                                <p>Tivi, tủ lạnh, bàn ủi, máy bơm, bala bala.</p>
+                                <a href="" class="btn btn-dark mt-3">Chụp Ngay</a>
                             </div>
                         </div>
                     </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
                 </div>
-            </div>
-        </div>
-        <div class="premium" id="product">
-            <div class="container hamster__data">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="category__title__ha text-center pt-5">
-                            Phụ Kiện Điện Thoại, Công Nghệ
-                        </h2>
-                    </div>
-                    <div class="row products__filters text-center pt-5">
-                        <div class="col-md-6 products__item1 products__line active-product1"  data-filter=".product">
-                            <h3 class="products__title">Phụ Kiện Điện Thoại, Máy Tính</h3>
-                            <span class="products_stock">Tai nghe, bút điện tử, chuột không dây, bàn phím ...</span>
-                        </div>
-                        <div class="col-md-6 products__item1"  data-filter=".food">
-                            <h3 class="products__title">Thiết Bị Mạng, Camera.</h3>
-                            <span class="products_stock">Các loại dây cáo, wifi, USB, camera, các loại thiết bị kết nối mạng khác...</span>
-                        </div>
-                    </div>
 
-                    <div class="products__content1 grid row">
-                        <!--==================== WW ====================-->
-                        <article class="products__card1 product col-md-3 p-4">
-                            <div class="products__item_cart shadow p-1 bg-white">
-                                <div class="products__shape">
-                                    <img src="/img/product1.webp" alt="" class="products__img">
-                                </div>
-
-                                <div class="products__data p-2">
-                                    <p class="product__name"><b>Lồng Kính Mica</b></p>
-                                    <h3 class="products__price">600.000vnd</h3>
-                                    <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ kiện đi kèm.</h4>
-                                    <button class="button products__button">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="products__card1 product col-md-3 p-4">
-                            <div class="products__item_cart shadow p-1 bg-white">
-                                <div class="products__shape">
-                                    <img src="/img/product2.webp" alt="" class="products__img">
-                                </div>
-
-                                <div class="products__data p-2">
-                                    <p class="product__name"><b>Lồng Kính Mica</b></p>
-                                    <h3 class="products__price">600.000vnd</h3>
-                                    <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ kiện đi kèm.</h4>
-                                    <button class="button products__button">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="products__card1 product col-md-3 p-4">
-                            <div class="products__item_cart shadow p-1 bg-white">
-                                <div class="products__shape">
-                                    <img src="/img/product3.webp" alt="" class="products__img">
-                                </div>
-
-                                <div class="products__data p-2">
-                                    <p class="product__name"><b>Lồng Kính Mica</b></p>
-                                    <h3 class="products__price">600.000vnd</h3>
-                                    <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ kiện đi kèm.</h4>
-                                    <button class="button products__button">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="products__card1 product col-md-3 p-4">
-                            <div class="products__item_cart shadow p-1 bg-white">
-                                <div class="products__shape">
-                                    <img src="/img/product4.webp" alt="" class="products__img">
-                                </div>
-
-                                <div class="products__data p-2">
-                                    <p class="product__name"><b>Lồng Kính Mica</b></p>
-                                    <h3 class="products__price">600.000vnd</h3>
-                                    <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ kiện đi kèm.</h4>
-                                    <button class="button products__button">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-                        <!--==================== BEAR ====================-->
-                        <article class="products__card1 food col-md-3 p-4">
-                            <div class="products__item_cart shadow p-1 bg-white">
-                                <div class="products__shape">
-                                    <img src="/img/product5.webp" alt="" class="products__img">
-                                </div>
-
-                                <div class="products__data">
-                                    <p class="product__name"><b>Lồng Kính Mica</b></p>
-                                    <h3 class="products__price">600.000vnd</h3>
-                                    <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ kiện đi kèm.</h4>
-                                    <button class="button products__button">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="products__card1 food col-md-3 p-4">
-                            <div class="products__item_cart shadow p-1 bg-white">
-                                <div class="products__shape">
-                                    <img src="/img/product6.webp" alt="" class="products__img">
-                                </div>
-
-                                <div class="products__data">
-                                    <p class="product__name"><b>Lồng Kính Mica</b></p>
-                                    <h3 class="products__price">600.000vnd</h3>
-                                    <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ kiện đi kèm.</h4>
-                                    <button class="button products__button">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="products__card1 food col-md-3 p-4">
-                            <div class="products__item_cart shadow p-1 bg-white">
-                                <div class="products__shape">
-                                    <img src="/img/product7.webp" alt="" class="products__img">
-                                </div>
-
-                                <div class="products__data">
-                                    <p class="product__name"><b>Lồng Kính Mica</b></p>
-                                    <h3 class="products__price">600.000vnd</h3>
-                                    <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ kiện đi kèm.</h4>
-                                    <button class="button products__button">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="products__card1 food col-md-3 p-4">
-                            <div class="products__item_cart shadow p-1 bg-white">
-                                <div class="products__shape">
-                                    <img src="/img/product8.webp" alt="" class="products__img">
-                                </div>
-
-                                <div class="products__data">
-                                    <p class="product__name"><b>Lồng Kính Mica</b></p>
-                                    <h3 class="products__price">600.000vnd</h3>
-                                    <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ kiện đi kèm.</h4>
-                                    <button class="button products__button">
-                                        <i class="fa fa-eye"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </article>
-                        <a href="#" class="quality__button p-3">
-                            Xem nhiều hơn
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="logo section p-5">
-            <div class="logo__container container grid">
-                <div class="row justify-content-center">
-                  <% for(let i=0; i < dataBrand.length; i++) { %>
-                    <div class="col-md-2 p-2">
-                        <img src="/img/<%= dataBrand[i].logo %>" alt="" class="logo__img">
-                    </div>
-                    <% } %>
-                </div>
-            </div>
-        </div>
-        <div class="blog section pt-5" id="new">
-                <div class="blog__container container">
-                    <div class="col-md-12 pt-3">
-                        <h2 class="section__title category__title__ha">
-                            Một Số Bài Viết Đáng Chú Ý
-                        </h2>
-                    </div>
-                    <div class="blog__content grid row">
-                        <article class="blog__card col-md-6 p-5">
-                            <div class="blog__image">
-                                <img src="/img/blog1.png" alt="" class="blog__img">
-                                <a href="#" class="blog__button">
-                                    <i class='bx bx-right-arrow-alt'></i>
-                                </a>
-                            </div>
-
-                            <div class="blog__data">
-                                <h2 class="blog__title">
-                                    WalleStore
+                <div class="category" id="category">
+                    <div class="container category__data">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <h2 class="section__title category__title__ha">
+                                    Danh mục các loại sản phẩm có tại cửa hàng!
                                 </h2>
-                                <p class="blog__description">
-                                    Cảm ơn mọi người đã ủng hộ WalleStore trong thời gian vừa qua, để không phụ lòng của tất cả mọi khách hàng, WalleStore đã không ngừng phát triển hơn nữa về mặt sản phẩm cũng như chất lượng sản phẩm, đáp ứng đầy đủ nhu cầu của mọi khách hàng, nâng cao trách nhiệm của mỗi nhận viên của mình.
-                                </p>
-                                <div class="blog__footer">
-                                    <div class="blog__reaction m-2">
-                                        <i class='bx bx-comment'></i>
-                                        <span>12</span>
-                                    </div>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <a href="#" class="btn btn-dark">Xem thêm</a>
+                            </div>
+                        </div>
 
-                                    <div class="blog__reaction m-2">
-                                        <i class='bx bx-show'></i>
-                                        <span>76,5k</span>
-                                    </div>
+                        <div class="row justify-content-center category__category">
+                            <% for(let i=0; i < dataCategory.length; i++) { %>
+                                <div class="col-md-3 category__group category__line p-4">
+                                    <img src="/img/<%= dataCategory[i].image %>" alt="" class="category__img">
+                                    <h3 class="category__title">Điện Thoại</h3>
+                                    <p class="category__description">Nhiều mẫu mã, mày sắc, nhãng hàng khác nhau. Tha hồ
+                                        mua sắm và lựa chọn.</p>
+                                    <a href="#" class="quality__button">
+                                        Xem
+                                        <i class='bx bx-right-arrow-alt'></i>
+                                    </a>
+                                </div>
+                                <% } %>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hamster" id="hot">
+                    <div class="container hamster__data">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="section__title category__title__ha">
+                                    Sản phẩm nổi bật.
+                                </h2>
+                            </div>
+                            <div class="row products__filters">
+                                <div class="col-md-4 products__item products__line active-product"
+                                    data-filter=".delicacies">
+                                    <h3 class="products__title">Điện Thoại Di Động</h3>
+                                    <span class="products_stock">3 Loại</span>
+                                </div>
+                                <div class="col-md-4 products__item products__line" data-filter=".coffee">
+                                    <h3 class="products__title">Máy Tính Bảng</h3>
+                                    <span class="products_stock">3 Loại</span>
+                                </div>
+                                <div class="col-md-4 products__item" data-filter=".cake">
+                                    <h3 class="products__title">Máy Tính Cá Nhân</h3>
+                                    <span class="products_stock">3 Loại</span>
                                 </div>
                             </div>
-                        </article>
-                        
-                        <article class="blog__card col-md-6 p-5">
-                            <div class="blog__image">
-                                <img src="/img/blog2.png" alt="" class="blog__img">
-                                <a href="#" class="blog__button">
+
+                            <div class="products__content grid row">
+                                <!--==================== WW ====================-->
+                                <article class="products__card delicacies col-md-4 p-5">
+                                    <div class="products__shape">
+                                        <img src="/img/phone1.jpg" alt="" class="products__img">
+                                    </div>
+
+                                    <div class="products__data">
+                                        <h2 class="product__name">iPhone 13 Pro Max</h2>
+                                        <h3 class="products__price">3 camera 12 MP.</h3>
+                                        <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh
+                                            dương.</h4>
+                                        <button class="button products__button">
+                                            <i class='bx bx-shopping-bag'></i>
+                                        </button>
+                                    </div>
+                                </article>
+
+                                <a href="#" class="quality__button p-3">
+                                    Xem nhiều hơn
                                     <i class='bx bx-right-arrow-alt'></i>
                                 </a>
                             </div>
-
-                            <div class="blog__data">
-                                <h2 class="blog__title">
-                                    WalleStore
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="premium" id="premium">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="section__title quality__title">
+                                    Ưu đãi mới dành cho người may mắn khi mua sắm tại cửa hàng!
                                 </h2>
-                                <p class="blog__description">
-                                    Cảm ơn mọi người đã ủng hộ WalleStore trong thời gian vừa qua, để không phụ lòng của tất cả mọi khách hàng, WalleStore đã không ngừng phát triển hơn nữa về mặt sản phẩm cũng như chất lượng sản phẩm, đáp ứng đầy đủ nhu cầu của mọi khách hàng, nâng cao trách nhiệm của mỗi nhận viên của mình.
-                                </p>
-                                <div class="blog__footer">
-                                    <div class="blog__reaction m-2">
-                                        <i class='bx bx-comment'></i>
-                                        <span>45</span>
-                                    </div>
+                            </div>
+                            <div class="row quality__content grid">
+                                <div class="col-md-6 quality__images text-center">
+                                    <img src="/img/quality1.jpg" alt="" class="quality__img-big">
+                                    <img src="/img/quality2.jpg" alt="" class="quality__img-small">
+                                </div>
+                                <div class="col-md-6 quality__data">
+                                    <h1 class="quality__title">Tivi Sony</h1>
+                                    <h2 class="quality__price">40.000.000vnd</h2>
+                                    <span class="quality__special">Ưu đãi đặc biệt dành cho bạn Hoàng.</span>
+                                    <p class="quality__description">
+                                        Khi mua tivi sony tại của hàng, khách hàng sẽ được ưu đãi nhận thêm một số món
+                                        quà từ cửa hàng, ngoài ra còn có thể nhận thêm một số vật dụng và một tai nghe
+                                        sony vô cùng dễ thương.
+                                    </p>
+                                    <div class="quality__buttons">
+                                        <button class="btn btn-dark">
+                                            Mua Ngay
+                                        </button>
 
-                                    <div class="blog__reaction m-2">
-                                        <i class='bx bx-show'></i>
-                                        <span>356,5k</span>
+                                        <a href="#" class="quality__button">
+                                            Xem thêm
+                                            <i class='bx bx-right-arrow-alt'></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-                        </article>
+                        </div>
                     </div>
                 </div>
-            </div>
-    </main>
-    <%- include("../partials/footer.ejs")%>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="/js/mixitup.min.js"></script>
-    <script src="/js/main.js"></script>
+                <div class="premium" id="product">
+                    <div class="container hamster__data">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h2 class="category__title__ha text-center pt-5">
+                                    Phụ Kiện Điện Thoại, Công Nghệ
+                                </h2>
+                            </div>
+                            <div class="row products__filters text-center pt-5">
+                                <div class="col-md-6 products__item1 products__line active-product1"
+                                    data-filter=".product">
+                                    <h3 class="products__title">Phụ Kiện Điện Thoại, Máy Tính</h3>
+                                    <span class="products_stock">Tai nghe, bút điện tử, chuột không dây, bàn phím
+                                        ...</span>
+                                </div>
+                                <div class="col-md-6 products__item1" data-filter=".food">
+                                    <h3 class="products__title">Thiết Bị Mạng, Camera.</h3>
+                                    <span class="products_stock">Các loại dây cáo, wifi, USB, camera, các loại thiết bị
+                                        kết nối mạng khác...</span>
+                                </div>
+                            </div>
+
+                            <div class="products__content1 grid row">
+                                <!--==================== WW ====================-->
+                                <article class="products__card1 product col-md-3 p-4">
+                                    <div class="products__item_cart shadow p-1 bg-white">
+                                        <div class="products__shape">
+                                            <img src="/img/product1.webp" alt="" class="products__img">
+                                        </div>
+
+                                        <div class="products__data p-2">
+                                            <p class="product__name"><b>Lồng Kính Mica</b></p>
+                                            <h3 class="products__price">600.000vnd</h3>
+                                            <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ
+                                                kiện đi kèm.</h4>
+                                            <button class="button products__button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="products__card1 product col-md-3 p-4">
+                                    <div class="products__item_cart shadow p-1 bg-white">
+                                        <div class="products__shape">
+                                            <img src="/img/product2.webp" alt="" class="products__img">
+                                        </div>
+
+                                        <div class="products__data p-2">
+                                            <p class="product__name"><b>Lồng Kính Mica</b></p>
+                                            <h3 class="products__price">600.000vnd</h3>
+                                            <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ
+                                                kiện đi kèm.</h4>
+                                            <button class="button products__button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="products__card1 product col-md-3 p-4">
+                                    <div class="products__item_cart shadow p-1 bg-white">
+                                        <div class="products__shape">
+                                            <img src="/img/product3.webp" alt="" class="products__img">
+                                        </div>
+
+                                        <div class="products__data p-2">
+                                            <p class="product__name"><b>Lồng Kính Mica</b></p>
+                                            <h3 class="products__price">600.000vnd</h3>
+                                            <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ
+                                                kiện đi kèm.</h4>
+                                            <button class="button products__button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="products__card1 product col-md-3 p-4">
+                                    <div class="products__item_cart shadow p-1 bg-white">
+                                        <div class="products__shape">
+                                            <img src="/img/product4.webp" alt="" class="products__img">
+                                        </div>
+
+                                        <div class="products__data p-2">
+                                            <p class="product__name"><b>Lồng Kính Mica</b></p>
+                                            <h3 class="products__price">600.000vnd</h3>
+                                            <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ
+                                                kiện đi kèm.</h4>
+                                            <button class="button products__button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                                <!--==================== BEAR ====================-->
+                                <article class="products__card1 food col-md-3 p-4">
+                                    <div class="products__item_cart shadow p-1 bg-white">
+                                        <div class="products__shape">
+                                            <img src="/img/product5.webp" alt="" class="products__img">
+                                        </div>
+
+                                        <div class="products__data">
+                                            <p class="product__name"><b>Lồng Kính Mica</b></p>
+                                            <h3 class="products__price">600.000vnd</h3>
+                                            <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ
+                                                kiện đi kèm.</h4>
+                                            <button class="button products__button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="products__card1 food col-md-3 p-4">
+                                    <div class="products__item_cart shadow p-1 bg-white">
+                                        <div class="products__shape">
+                                            <img src="/img/product6.webp" alt="" class="products__img">
+                                        </div>
+
+                                        <div class="products__data">
+                                            <p class="product__name"><b>Lồng Kính Mica</b></p>
+                                            <h3 class="products__price">600.000vnd</h3>
+                                            <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ
+                                                kiện đi kèm.</h4>
+                                            <button class="button products__button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="products__card1 food col-md-3 p-4">
+                                    <div class="products__item_cart shadow p-1 bg-white">
+                                        <div class="products__shape">
+                                            <img src="/img/product7.webp" alt="" class="products__img">
+                                        </div>
+
+                                        <div class="products__data">
+                                            <p class="product__name"><b>Lồng Kính Mica</b></p>
+                                            <h3 class="products__price">600.000vnd</h3>
+                                            <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ
+                                                kiện đi kèm.</h4>
+                                            <button class="button products__button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="products__card1 food col-md-3 p-4">
+                                    <div class="products__item_cart shadow p-1 bg-white">
+                                        <div class="products__shape">
+                                            <img src="/img/product8.webp" alt="" class="products__img">
+                                        </div>
+
+                                        <div class="products__data">
+                                            <p class="product__name"><b>Lồng Kính Mica</b></p>
+                                            <h3 class="products__price">600.000vnd</h3>
+                                            <h4 class="products__description">Lồng với 5 mặt kính và đế nhựa, đầy đủ phụ
+                                                kiện đi kèm.</h4>
+                                            <button class="button products__button">
+                                                <i class="fa fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </article>
+                                <a href="#" class="quality__button p-3">
+                                    Xem nhiều hơn
+                                    <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="logo section p-5">
+                    <div class="logo__container container grid">
+                        <div class="row justify-content-center">
+                            <% for(let i=0; i < dataBrand.length; i++) { %>
+                                <div class="col-md-2 p-2">
+                                    <img src="/img/<%= dataBrand[i].logo %>" alt="" class="logo__img">
+                                </div>
+                                <% } %>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog section pt-5" id="new">
+                    <div class="blog__container container">
+                        <div class="col-md-12 pt-3">
+                            <h2 class="section__title category__title__ha">
+                                Một Số Bài Viết Đáng Chú Ý
+                            </h2>
+                        </div>
+                        <div class="blog__content grid row">
+                            <article class="blog__card col-md-6 p-5">
+                                <div class="blog__image">
+                                    <img src="/img/blog1.png" alt="" class="blog__img">
+                                    <a href="#" class="blog__button">
+                                        <i class='bx bx-right-arrow-alt'></i>
+                                    </a>
+                                </div>
+
+                                <div class="blog__data">
+                                    <h2 class="blog__title">
+                                        WalleStore
+                                    </h2>
+                                    <p class="blog__description">
+                                        Cảm ơn mọi người đã ủng hộ WalleStore trong thời gian vừa qua, để không phụ lòng
+                                        của tất cả mọi khách hàng, WalleStore đã không ngừng phát triển hơn nữa về mặt
+                                        sản phẩm cũng như chất lượng sản phẩm, đáp ứng đầy đủ nhu cầu của mọi khách
+                                        hàng, nâng cao trách nhiệm của mỗi nhận viên của mình.
+                                    </p>
+                                    <div class="blog__footer">
+                                        <div class="blog__reaction m-2">
+                                            <i class='bx bx-comment'></i>
+                                            <span>12</span>
+                                        </div>
+
+                                        <div class="blog__reaction m-2">
+                                            <i class='bx bx-show'></i>
+                                            <span>76,5k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="blog__card col-md-6 p-5">
+                                <div class="blog__image">
+                                    <img src="/img/blog2.png" alt="" class="blog__img">
+                                    <a href="#" class="blog__button">
+                                        <i class='bx bx-right-arrow-alt'></i>
+                                    </a>
+                                </div>
+
+                                <div class="blog__data">
+                                    <h2 class="blog__title">
+                                        WalleStore
+                                    </h2>
+                                    <p class="blog__description">
+                                        Cảm ơn mọi người đã ủng hộ WalleStore trong thời gian vừa qua, để không phụ lòng
+                                        của tất cả mọi khách hàng, WalleStore đã không ngừng phát triển hơn nữa về mặt
+                                        sản phẩm cũng như chất lượng sản phẩm, đáp ứng đầy đủ nhu cầu của mọi khách
+                                        hàng, nâng cao trách nhiệm của mỗi nhận viên của mình.
+                                    </p>
+                                    <div class="blog__footer">
+                                        <div class="blog__reaction m-2">
+                                            <i class='bx bx-comment'></i>
+                                            <span>45</span>
+                                        </div>
+
+                                        <div class="blog__reaction m-2">
+                                            <i class='bx bx-show'></i>
+                                            <span>356,5k</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <%- include("../partials/footer.ejs")%>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                    crossorigin="anonymous"></script>
+                <script src="/js/mixitup.min.js"></script>
+                <script src="/js/main.js"></script>
 </body>
+
 </html>
