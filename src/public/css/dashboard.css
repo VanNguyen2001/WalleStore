@@ -1,0 +1,673 @@
+#bottom-header{
+    margin-top: 30px;
+}
+.logo{
+    width: 100%;
+    height: 40px;
+}
+.text-center {
+    text-align: center;
+}
+.nav-item {
+    margin-left: 20px;
+}
+.right {
+  position: absolute;
+  right: 0px;
+  padding-right: 130px;
+}
+.text-color-black{
+    color: #000000;
+}
+.navbar{
+    background-color: rgba(255, 255, 255, 0.5);
+}
+#fb-root {
+    z-index: 2147483644;
+    position: fixed;
+    left: 18px;
+    bottom: 25px;
+    height: 40px;
+    width: 40px;
+    border-radius: 29px;
+    box-shadow: rgb(0 0 0 / 15%) 0 4px 12px 0;
+    background: 0;
+    display: block;
+    opacity: 0.8;
+}
+#fb-root img{
+    width: 100%;
+}
+#nguyen{
+    padding: 5px;
+    z-index: 2147483644;
+    position: fixed;
+    left: 1170px;
+    bottom: 25px;
+    right: 0px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 50%) 0 4px 12px 0;
+    background: 0;
+    display: block;
+    opacity: 0.5;
+    font-weight: bold;
+    color: #00008b;
+}
+#nguyen i{
+    padding: 0px 10px;
+}
+.lim{
+    border-right: 1px solid #000000;
+}
+ul#menu{
+    list-style: none;
+    display: flex;
+    padding-left: 785px;
+}
+ul#menu a{
+    display: block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+}
+    ul#menu a::after {
+        content: "";
+        height: 5px;
+        width: 0px;
+        background: #2A3659;
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        transition: all 0.5s ease-in-out;
+        border-radius: 20px;
+    }
+ul#menu a:hover::after{
+    width: 50%;
+    transform: translateX(100%);
+}
+.content {
+    position: relative;
+}
+.img-content{
+    background-image: url(~/image/poster.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 660px;
+}
+.img-hover img{
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.img-hover img:hover{
+    transform: scale(1.04);
+}
+.text-content{
+    text-align: center;
+    width: 600px;
+    display: block;
+    position: relative;
+    top: 110px;
+    left: 100px;
+    padding: 10px;
+}
+.text-content h1{
+    font-size: 80px;
+}
+.text-content h6{
+    font-size: 30px;
+}
+.model-content{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 340px;
+    padding: 15px;
+    font-weight: bold;
+    position: relative;
+    top: 150px;
+    left: 140px;
+    border-radius: 5px;
+    font-size: 18px;
+}
+.model-content p{
+    padding: 1px 0px;
+    color: #696969;
+    padding-left: 15px;
+}
+.model-content i{
+    color: #00008b;
+}
+.model-content span{
+    font-size: 15px;
+    padding-left: 15px;
+}
+.container-content{
+    padding-top: 50px;
+}
+.font-size-40{
+    font-size: 40px;
+    font-weight: bold;
+}
+.line{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #00008b;
+    margin: 1em 0;
+    padding: 0;
+}
+table.security{
+    left: 130px;
+    position: relative;
+}
+.security-content i{
+    color: #00008b;
+    font-size: 22px;
+}
+.security-content span{
+    color: #696969;
+    font-weight: bold;
+}
+table.flexible{
+    left: 70px;
+    position: relative;
+}
+.text-color{
+    color: #00008b;
+}
+.flexible-content i{
+    color: #00008b;
+    font-size: 22px;
+}
+.flexible-content span{
+    color: #696969;
+    font-weight: bold;
+}
+.c-images img{
+    border-radius: 10px;
+    max-height: 444px;
+    width: 100%;
+}
+.user-now{
+    width: 150px;
+}
+.user-now a{
+    font-weight: bold;
+    text-decoration: none;
+    color: #000000;
+    transform: scale(1);
+    transition: all 0.5s;
+    padding: 10px;
+    border: 1px solid #000000;
+    width: 150px;
+}
+.user-now a:hover{
+    background-color: #000000;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+.end-content{
+    width: 600px;
+    left: 280px;
+    position: relative;
+}
+.end-content span{
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    color: #696969;
+}
+.end-content i{
+    padding: 5px;
+    color: #00008b;
+    font-size: 15px;
+}
+.end-content td{
+    padding-top: 20px;
+}
+.flex{
+    display: flex;
+}
+.footer{
+    background: #BAC8D9;
+}
+.footer-img{
+    width: 50%;
+    border-radius: 5px;
+}
+.view-user{
+    background: #4D5373;
+}
+.menu-footer a{
+    font-weight: bold;
+    text-decoration: none;
+    transform: scale(1);
+    transition: all 0.5s;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+.menu-footer a:hover{
+    background-color: #4D5373;
+    transform: scale(1.1);
+}
+
+
+
+
+#login-body{
+    background-image: url(../images/image_main_login.jpg);
+    background-size: cover;
+}
+#login-wrapper{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#login-form{
+    max-width: 444px;
+    background-color: rgba(255, 255, 255, 0.7);
+    flex-grow: 1;
+    padding: 40px;
+    box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 1.0);
+    border-radius: 5px;
+}
+.login-heading{
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align: center;
+    color: #4D5373;
+}
+.login-group{
+    border-bottom: 2px solid #BAC8D9;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.login-group i{
+    color: #4D5373;
+    padding-top: 10px;
+    padding-right: 5px;
+    padding: 8px;
+    border: 1px solid #4D5373;
+    margin: 3px;
+    border-radius: 4px;
+}
+.login-input{
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #000000;
+    flex-grow: 1;
+}
+.login-input::placeholder{
+    font-weight: bold;
+    color: #4D5373;
+}
+.login-submit{
+    background: transparent;
+    border: 1px solid #4D5373;
+    color: #4D5373;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 26px;
+    font-weight: bold;
+    transform: scale(1);
+    transition: all 0.5s;
+    border-radius: 4px;
+    box-shadow: 0px 0px 17px 2px rgba(0, 0, 0, 0.9);
+}
+.login-submit:hover{
+    background-color: #4D5373;
+    transform: scale(1.06);
+    color: #ffffff;
+}
+.login-icon a{
+    color: #4D5373;
+    text-transform: uppercase;
+    transform: scale(1);
+    transition: all 0.5s;
+    border-radius: 4px;
+    font-size: 25px;
+}
+.login-icon a:hover{
+    background-color: #4D5373;
+    transform: scale(1.06);
+    color: #ffffff;
+}
+
+
+
+
+#sidebar{
+    position: fixed;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #2C2C2C;
+    transition: all .5s ease;
+    border: #2C2C2C 1px solid;
+}
+#sidebar .sidebar-logo{
+    background-size: cover;
+    width: 100%;
+    text-align: center;
+    height: 70px;
+    user-select: none;
+    border-radius: 5px;
+}
+.sidebar-logo img{
+    width: 100%;
+    height: 100%;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.sidebar-logo img:hover{
+    transform: scale(1.7);
+}
+#sidebar ul a{
+    text-decoration: none;
+    display: block;
+    height: 100%;
+    width: 100%;
+    line-height: 50px;
+    color: #ffffff;
+    padding-left: 10px;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid #ffffff;
+    transition: 0.5s;
+    font-weight: bold;
+}
+#sidebar ul li:hover a{
+    padding-left: 10%;
+    background-color: #FFF;
+    color: #2C2C2C;
+}
+#sidebar ul a i{
+    margin-right: 16px;
+}
+.sidebar-info{
+    display: flex;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    color: #FFFFFF;
+}
+.sidebar-info a{
+    padding-left: 10px;
+    padding-right: 3px;
+    text-decoration: none;
+    color: #FFF;
+}
+.sidebar-info a:hover{
+    color: #FFFFFF;
+}
+.sidebar-logout a{
+    width: 100px;
+    background-color: #FFFFFF;
+    color: #2C2C2C;
+    box-shadow: rgb(255 255 255 / 100%) 0 4px 12px 0;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.sidebar-logout a:hover{
+    transform: scale(1.1);
+    background-color: #FFFFFF;
+    color: #2C2C2C;
+}
+#menu-controll{
+    margin-left: 200px;
+    position: fixed;
+    width: 100%;
+}
+#menu-controll nav{
+    height: 70px;
+}
+#container-controll{
+    padding-left: 200px;
+    padding-top: 70px;
+}
+.title-controll{
+    font-size: 20px;
+    font-weight: bold;
+}
+.title-controll p{
+    padding: 5px;
+    padding-left: 50px;
+}
+.table-controll{
+    border-radius: 10px;
+}
+.table-controll table{
+    width: 100%;
+}
+.table-controll th{
+    border-collapse: collapse;
+    padding: 6px 10px;
+    background-color: #70789C;
+    color: #000;
+}
+.table-controll td{
+    border-bottom: 1px solid #FFF;
+    border-collapse: collapse;
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.table-controll-patient th {
+    border-collapse: collapse;
+    padding: 6px 10px;
+    background-color: #20272B;
+    color: #FFF;
+}
+
+.table-controll-patient td {
+    border-bottom: 1px solid #20272B;
+    border-collapse: collapse;
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.table-controll-patient tbody tr {
+    transition: 0.6s;
+}
+
+    .table-controll-patient tbody tr:hover {
+        background-color: #20272B;
+        color: #FFF;
+    }
+
+.table-controll-doctor tbody tr {
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+    .table-controll-doctor tbody tr:hover {
+        transform: scale(1.05);
+    }
+
+.table-main{
+    background-color: #FFF;
+}
+.table-main tbody tr{
+    transition: 0.6s;
+}
+.table-main tbody tr:hover{
+    background-color: #2A3659;
+    color: #FFF;
+}
+.table-controll-borderr{
+    border-radius: 0 6px 6px 0;
+}
+.table-controll-borderl{
+    border-radius: 6px 0 0 6px;
+}
+
+.btn-icon {
+}
+
+.btn-icon i {
+    color: #000;
+    padding: 4px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+.btn-icon i:hover {
+    color: #FFF;
+    padding: 4px;
+    border: 1px solid #FFF;
+    border-radius: 4px;
+}
+
+.btn-exit {
+    margin: 20px;
+    color: #000000;
+    padding: 4px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.btn-exit:hover {
+    color: #FFFFFF;
+    background: #000000;
+    padding: 4px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+
+.btn-edit {
+    margin: 20px;
+    color: #2A3659;
+    padding: 4px;
+    border: 1px solid #2A3659;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.btn-edit:hover {
+    color: #FFFFFF;
+    background: #2A3659;
+    padding: 4px;
+    border: 1px solid #2A3659;
+    border-radius: 4px;
+}
+
+.btn-save {
+    margin: 20px;
+    color: #0d6efd;
+    padding: 4px;
+    border: 1px solid #0d6efd;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.btn-save:hover {
+    color: #FFFFFF;
+    background: #0d6efd;
+    padding: 4px;
+    border: 1px solid #0d6efd;
+    border-radius: 4px;
+}
+
+.btn-delete {
+    margin: 20px;
+    color: #dc3545;
+    padding: 4px;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.btn-delete:hover {
+    color: #FFFFFF;
+    background: #dc3545;
+    padding: 4px;
+    border: 1px solid #dc3545;
+    border-radius: 4px;
+}
+
+.btn-create {
+    width: 100%;
+    color: #000000;
+    padding: 4px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+.btn-create:hover {
+    color: #FFFFFF;
+    background: #000000;
+    padding: 4px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+}
+.btn-create-patient {
+    width: 100%;
+    color: #2A3659;
+    padding: 4px;
+    border: 1px solid #2A3659;
+    border-radius: 4px;
+    transition: 0.4s;
+}
+
+    .btn-create-patient:hover {
+        color: #FFFFFF;
+        background: #2A3659;
+        padding: 4px;
+        border: 1px solid #2A3659;
+        border-radius: 4px;
+    }
+.btn-create-doctor {
+    width: 100%;
+    color: #000;
+    padding: 4px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+
+    .btn-create-doctor:hover {
+        transform: scale(1.05);
+    }
+
+#icon-view {
+    padding: 5px;
+    z-index: 2147483644;
+    position: fixed;
+    left: 1240px;
+    bottom: 25px;
+    right: 0px;
+    border-radius: 10px;
+    box-shadow: rgb(0 0 0 / 50%) 0 4px 12px 0;
+    background: 0;
+    display: block;
+    opacity: 0.5;
+    color: #00008b;
+}
+#icon-view img{
+    width: 100%;
+}
+
+.card-medicine {
+    padding: 10px;
+    transform: scale(1);
+    transition: all 0.5s;
+}
+.card-medicine:hover{
+    transform: scale(1.05);
+}
+
+.view{
+    background-image: url(/img/button.png);
+}

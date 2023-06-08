@@ -4,13 +4,17 @@ import pool from '../configs/connectDB';
 let getBrandPage = async (req, res) => {
     const [rows, fields] = await pool.execute('SELECT * FROM brand');
 
-    return res.render('admin/brand__list.ejs', { dataBrand: rows, test: 'abc string test' })
+    return res.render('admin/list__brand.ejs', { dataBrand: rows, test: 'abc string test' })
 }
 
 let getDetailBrandPage = async (req, res) => {
     let brandId = req.params.id;
     let [brand] = await pool.execute('select * from brand where id = ?', [brandId]);
     return res.send(JSON.stringify(brand))
+}
+
+let addBrand = async (req, res) => {
+    return res.render('admin/add__brand.ejs')
 }
 
 let createNewBrand = async (req, res) => {
@@ -44,5 +48,5 @@ let postUpdateBrand = async (req, res) => {
 }
 
 module.exports = {
-    getBrandPage, getDetailBrandPage, createNewBrand, deleteBrand, getEditBrandPage, postUpdateBrand
+    getBrandPage, getDetailBrandPage, addBrand, createNewBrand, deleteBrand, getEditBrandPage, postUpdateBrand
 }

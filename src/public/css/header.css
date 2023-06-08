@@ -1,0 +1,81 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Josefin Sans', sans-serif;
+}
+.header {
+	height: 100vh;
+	width: 100%;
+	background-image: url(./images/about.jpg);
+	background-size: cover;
+	background-position: center;
+	border-radius: 0px 0px 50px 50px;
+}
+.nav-header {
+	background-color: rgba(255, 255, 255, 0.5);
+	padding-top: 50px;
+	position: fixed;
+	width: 100%;
+	display: flex;
+	text-align: center;
+	justify-content: space-between;
+}
+.nav-right {
+	position: absolute;
+	right: 0px;
+}
+.nav-header ul li {
+	list-style-type: none;
+	display: inline-block;
+}
+.nav-header ul li a{
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: capitalize;
+	transition: 0.4s;
+}
+.nav-header ul li a:hover{
+	color: #29CBFF;
+}
+.logo{
+	height: 50px;
+	width: auto;
+}
+.logo {
+	transform: scale(1);
+	transition: all 0.5s;
+}
+.logo:hover {
+	transform: scale(1.05);
+}
+.button-header{
+    color: #000000;
+    cursor: pointer;
+    text-align:center;
+    border: none;
+    font-weight: bold;
+    background-size: 300% 100%;
+    border-radius: 20px;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    padding: 10px 20px;
+}
+.button-header:hover{
+    background-position: 100% 0;
+    moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    color: #FFFFFF;
+}
+.button-header:focus{
+    outline: none;
+}
+.button-header-color{
+    background-image: linear-gradient(to right, #29CBFF, #FFFFFF, #29CBFF, #3f86ed);
+    box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75);
+}

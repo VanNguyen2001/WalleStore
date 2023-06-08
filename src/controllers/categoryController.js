@@ -4,13 +4,17 @@ import pool from '../configs/connectDB';
 let getCategoryPage = async (req, res) => {
     const [rows, fields] = await pool.execute('SELECT * FROM category');
 
-    return res.render('admin/category__list.ejs', { dataCategory: rows, test: 'abc string test' })
+    return res.render('admin/list__category.ejs', { dataCategory: rows, test: 'abc string test' })
 }
 
 let getDetailCategoryPage = async (req, res) => {
     let categoryId = req.params.id;
     let [category] = await pool.execute('select * from category where id = ?', [categoryId]);
     return res.send(JSON.stringify(category))
+}
+
+let addCategory = async (req, res) => {
+    return res.render('admin/add__category.ejs')
 }
 
 let createNewCategory = async (req, res) => {
@@ -44,5 +48,5 @@ let postUpdateCategory = async (req, res) => {
 }
 
 module.exports = {
-    getCategoryPage, getDetailCategoryPage, createNewCategory, deleteCategory, getEditCategoryPage, postUpdateCategory
+    getCategoryPage, getDetailCategoryPage, addCategory, createNewCategory, deleteCategory, getEditCategoryPage, postUpdateCategory
 }
