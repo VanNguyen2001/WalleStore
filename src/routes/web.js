@@ -2,17 +2,20 @@ import express from "express";
 import homeController from '../controllers/homeController'
 import brandController from '../controllers/brandController'
 import categoryController from '../controllers/categoryController'
+import productController from '../controllers/productController'
 
 let router = express.Router();
 
 const initWebRoute = (app) => {
     router.get('/', homeController.getAdminPage);
 
-    router.get('/detail/user/:id', homeController.getDetailPage);
-    router.post('/create-new-user', homeController.createNewUser);
-    router.post('/delete-user', homeController.deleteUser);
-    router.get('/edit-user/:id', homeController.getEditPage);
-    router.post('/update-user', homeController.postUpdateUser);
+    router.get('/login', homeController.getLoginPage);
+
+    router.get('/detail/userdetail/:id', homeController.getDetailPage);
+    router.post('/create-new-userdetail', homeController.createNewuserdetail);
+    router.post('/delete-userdetail', homeController.deleteuserdetail);
+    router.get('/edit-userdetail/:id', homeController.getEditPage);
+    router.post('/update-userdetail', homeController.postUpdateuserdetail);
 
     router.get('/brand-list', brandController.getBrandPage);
     router.get('/detail-brand/brand/:id', brandController.getDetailBrandPage);
@@ -28,13 +31,21 @@ const initWebRoute = (app) => {
     router.get('/edit-category/:id', categoryController.getEditCategoryPage);
     router.post('/update-category', categoryController.postUpdateCategory);
 
+    router.get('/product-list', productController.getProductPage);
+    router.get('/detail-product/product/:id', productController.getDetailProductPage);
+    router.post('/create-new-product', productController.createNewProduct);
+    router.post('/delete-product', productController.deleteProduct);
+    router.get('/edit-product/:id', productController.getEditProductPage);
+    router.post('/update-product', productController.postUpdateProduct);
+
     router.get('/home', homeController.getHomePage);
-    
+
+    // router.get('/api/get-all-users', userController.handleGetAllUsers);
 
     router.get('/about', (req, res) => {
         res.send('My!')
     })
-    
+
     return app.use('/', router)
 }
 

@@ -1,4 +1,4 @@
-import pool from '../configs/connectDB';
+import pool from '../config/connectDB';
 
 
 let getBrandPage = async (req, res) => {

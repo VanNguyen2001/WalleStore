@@ -1,55 +1,61 @@
-import pool from '../configs/connectDB';
+import pool from '../config/connectDB';
 
 
 let getAdminPage = async (req, res) => {
-    const [rows, fields] = await pool.execute('SELECT * FROM users');
+    const [rows, fields] = await pool.execute('SELECT * FROM userdetail');
 
-    return res.render('admin/user__list.ejs', { dataUser: rows, test: 'abc string test' })
+    return res.render('admin/userdetail__list.ejs', { datauserdetail: rows })
 }
+
+let getLoginPage = async (req, res) => {
+    return res.render('pages/login.ejs')
+}
+
 
 let getHomePage = async (req, res) => {
     const [rows] = await pool.execute('SELECT * FROM category');
     const [roll] = await pool.execute('SELECT * FROM brand');
+    const [product] = await pool.execute('SELECT * FROM product');
 
-    return res.render('pages/index.ejs', { dataCategory: rows, dataBrand: roll})
+    return res.render('pages/index.ejs', { dataCategory: rows, dataBrand: roll, dataProduct: product })
 }
 
 let getDetailPage = async (req, res) => {
-    let userId = req.params.id;
-    let [user] = await pool.execute('select * from users where id = ?', [userId]);
-    return res.send(JSON.stringify(user))
+    let userdetailId = req.params.id;
+    let [userdetail] = await pool.execute('select * from userdetail where id = ?', [userdetailId]);
+    return res.send(JSON.stringify(userdetail))
 }
 
-let createNewUser = async (req, res) => {
-    let { firstName, lastName, email, address } = req.body;
+let createNewuserdetail = async (req, res) => {
+    let { name, gender, email, phone, address } = req.body;
 
-    await pool.execute('insert into users(firstName, lastName, email, address) values (?, ?, ?, ?)',
-        [firstName, lastName, email, address]);
+    await pool.execute('insert into userdetail(name, gender, email, phone, address) values (?, ?, ?, ?, ?)',
+        [name, gender, email, phone, address]);
 
     return res.redirect('/')
 }
 
-let deleteUser = async (req, res) => {
-    let userId = req.body.userId;
-    await pool.execute('delete from users where id = ?', [userId])
+let deleteuserdetail = async (req, res) => {
+    let userdetailId = req.body.userdetailId;
+    await pool.execute('delete from userdetail where id = ?', [userdetailId])
     return res.redirect('/');
 }
 
 let getEditPage = async (req, res) => {
     let id = req.params.id;
-    let [user] = await pool.execute('Select * from users where id = ?', [id]);
-    return res.render('admin/update__user.ejs', { dataUser: user[0] }); // x <- y
+    let [userdetail] = await pool.execute('Select * from userdetail where id = ?', [id]);
+    return res.render('admin/update__userdetail.ejs', { datauserdetail: userdetail[0] }); // x <- y
 }
 
-let postUpdateUser = async (req, res) => {
-    let { firstName, lastName, email, address, id } = req.body;
+let postUpdateuserdetail = async (req, res) => {
+    let { name, gender, email, phone, address, id } = req.body;
 
-    await pool.execute('update users set firstName= ?, lastName = ? , email = ? , address= ? where id = ?',
-        [firstName, lastName, email, address, id]);
+    await pool.execute('update userdetail set name= ?, gender = ? , email = ? , phone = ? , address= ? where id = ?',
+        [name, gender, email, phone, address, id]);
 
     return res.redirect('/');
 }
 
 module.exports = {
-    getAdminPage, getHomePage, getDetailPage, createNewUser, deleteUser, getEditPage, postUpdateUser
+    getAdminPage, getHomePage, getDetailPage, createNewuserdetail, deleteuserdetail, getEditPage, postUpdateuserdetail, getLoginPage
 }
