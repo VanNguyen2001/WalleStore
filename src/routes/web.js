@@ -9,6 +9,7 @@ let router = express.Router();
 const initWebRoute = (app) => {
     router.get('/', userController.listUsers);
 
+    router.get('/add-user', userController.addUser);
     router.post('/create-user', userController.createUser);
     router.post('/delete-user', userController.deleteUser);
     router.get('/edit-user/:id', userController.editUser);
@@ -28,8 +29,9 @@ const initWebRoute = (app) => {
     router.get('/edit-category/:id', categoryController.getEditCategoryPage);
     router.post('/update-category', categoryController.postUpdateCategory);
 
-    router.get('/home', homeController.getHomePage);
-    router.get('/child', homeController.child);
+    router.get('/home', homeController.homePage);
+    router.get('/login', homeController.loginPage);
+    router.post('/signUp', userController.signUp);
     
     return app.use('/', router)
 }

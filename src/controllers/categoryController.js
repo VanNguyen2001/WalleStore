@@ -4,7 +4,7 @@ import pool from '../configs/connectDB';
 let getCategoryPage = async (req, res) => {
     const [rows, fields] = await pool.execute('SELECT * FROM category');
 
-    return res.render('admin/list__category.ejs', { dataCategory: rows, test: 'abc string test' })
+    return res.render('admin/list__categorys.ejs', { dataCategory: rows, test: 'abc string test' })
 }
 
 let getDetailCategoryPage = async (req, res) => {

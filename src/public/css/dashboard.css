@@ -227,9 +227,9 @@ table.flexible{
 .flex{
     display: flex;
 }
-.footer{
+/* .footer{
     background: #BAC8D9;
-}
+} */
 .footer-img{
     width: 50%;
     border-radius: 5px;
@@ -255,11 +255,12 @@ table.flexible{
 
 
 #login-body{
-    background-image: url(../images/image_main_login.jpg);
+    background-image: url(/img/carousel3.png);
     background-size: cover;
+    width: 100%;
 }
 #login-wrapper{
-    min-height: 100vh;
+    min-height: 110vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -421,7 +422,7 @@ table.flexible{
     color: #2C2C2C;
 }
 #menu-controll{
-    margin-left: 200px;
+    padding-left: 200px;
     position: fixed;
     width: 100%;
 }

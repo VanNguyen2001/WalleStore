@@ -4,7 +4,7 @@ import pool from '../configs/connectDB';
 let getBrandPage = async (req, res) => {
     const [rows, fields] = await pool.execute('SELECT * FROM brand');
 
-    return res.render('admin/list__brand.ejs', { dataBrand: rows, test: 'abc string test' })
+    return res.render('admin/list__brands.ejs', { dataBrand: rows, test: 'abc string test' })
 }
 
 let getDetailBrandPage = async (req, res) => {

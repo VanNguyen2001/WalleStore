@@ -1,0 +1,36 @@
+<%- include("header.ejs")%>
+<div class="container">
+    <form action="/create-user" method="POST">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Họ và tên</label>
+          <input type="text" class="form-control" placeholder="Nhập họ tên" name="name">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Giới tính</label>
+            <input type="text" class="form-control" placeholder="Nhập giới tính" name="gender">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Ngày sinh</label>
+            <input type="date" class="form-control" placeholder="Chọn ngày sinh" name="birthDay">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Số điện thoại</label>
+            <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="phone">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Địa chỉ</label>
+            <input type="text" class="form-control" placeholder="Nhập địa chỉ" name="address">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Mật khẩu</label>
+            <input type="text" class="form-control" placeholder="Nhập mật khẩu" name="password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Vai trò</label>
+            <input type="text" class="form-control" placeholder="Chọn vai trò" name="role">
+          </div>
+        <button type="submit" class="btn btn-primary">Thêm</button>
+        <a class="btn btn-dark" href="/">Trở về</a>
+      </form>
+</div>
+<%- include("footer.ejs")%>

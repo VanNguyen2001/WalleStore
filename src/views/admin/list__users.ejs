@@ -1,0 +1,40 @@
+<%- include("header.ejs")%>
+    <div class="container">
+        <h4>Người Dùng</h4>
+        <a href="/add-user" class="btn btn-dark">Thêm Người dùng</a>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Tên Người Dùng</th>
+                <th scope="col">Giới Tính</th>
+                <th scope="col">Ngày Sinh</th>
+                <th scope="col">Số Di Động</th>
+                <th scope="col">Địa Chỉ</th>
+                <th class="text-center" scope="col">Tuỳ chọn</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < dataUser.length; i++) { %>
+                <tr>
+                    <td><%= dataUser[i].name %></td>
+                    <td><%= dataUser[i].gender %></td>
+                    <td><%= dataUser[i].birthDay %></td>
+                    <td><%= dataUser[i].phone %></td>
+                    <td><%= dataUser[i].address %></td>
+                    <td>
+                      <div class="row">
+                        <form class="col-md-6" action="/edit-user/<%= dataUser[i].id %>" method="GET">
+                          <button type="submit" class="btn btn-dark">Xem</button>
+                        </form>
+                        <form class="col-md-6" action="/delete-user" method="post">
+                          <input type="text" hidden value="<%= dataUser[i].id %>" name="userId"/>
+                          <button type="submit" class="btn btn-dark">Xoá</button>
+                        </form>
+                      </div>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+    </div>
+    <%- include("footer.ejs")%>    
