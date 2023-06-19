@@ -20,38 +20,38 @@
           <tr>
             <th scope="col">Tên</th>
             <th scope="col">Giới Tính</th>
-            <th scope="col">Email</th>
+            <th scope="col">Ngày Sinh</th>
             <th scope="col">Số Điện Thoại</th>
             <th scope="col">Địa Chỉ</th>
+            <th scope="col">Chức Vụ </th>
             <th class="text-center" scope="col">Tuỳ chọn</th>
           </tr>
         </thead>
         <tbody>
-          <% for(let i=0; i < datauserdetail.length; i++) { %>
+          <% for(let i=0; i < datausers.length; i++) { %>
             <tr>
               <td>
-                <%= datauserdetail[i].name %>
+                <%= datausers[i].name %>
               </td>
               <td>
-                <%= datauserdetail[i].gender %>
+                <%= datausers[i].gender %>
               </td>
               <td>
-                <%= datauserdetail[i].email %>
+                <%= datausers[i].birthDay %>
               </td>
               <td>
-                <%= datauserdetail[i].phone %>
+                <%= datausers[i].phone %>
               </td>
               <td>
-                <%= datauserdetail[i].address %>
+                <%= datausers[i].address %>
+              </td>
+              <td>
+                <%= datausers[i].role %>
               </td>
               <td>
                 <div class="row">
-                  <form class="col-md-6" action="/edit-userdetail/<%= datauserdetail[i].id %>" method="GET">
+                  <form class="col-md-6" action="/edit-users/<%= datausers[i].id %>" method="GET">
                     <button type="submit" class="btn btn-dark">View</button>
-                  </form>
-                  <form class="col-md-6" action="/delete-userdetail" method="post">
-                    <input type="text" hidden value="<%= datauserdetail[i].id %>" name="userdetailId" />
-                    <button type="submit" class="btn btn-dark">Delete</button>
                   </form>
                 </div>
               </td>
@@ -60,7 +60,7 @@
         </tbody>
       </table>
 
-      <form action="/create-new-userdetail" method="POST">
+      <form action="/create-new-users" method="POST">
         <div class="form-group">
           <label for="exampleInputEmail1">Tên</label>
           <input type="text" class="form-control" placeholder="Nhập tên của bạn...." name="name">
@@ -70,16 +70,24 @@
           <input type="text" class="form-control" placeholder="Nhập tên của bạn...." name="gender">
         </div>
         <div class="form-group">
-          <label for="exampleInputEmail1">Email</label>
-          <input type="email" class="form-control" placeholder="Nhập email...." name="email">
+          <label for="exampleInputEmail1">Ngày Sinh</label>
+          <input type="date" class="form-control" placeholder="Nhập tên của bạn...." name="birthDay">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Số Điện Thoại</label>
-          <input type="text" class="form-control" placeholder="Nhập số điện thoại...." name="phone">
+          <input type="text" class="form-control" placeholder="Nhập sdt...." name="phone">
         </div>
         <div class="form-group">
           <label for="exampleInputEmail1">Địa chỉ</label>
           <input type="text" class="form-control" placeholder="Nhập địa chỉ...." name="address">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Mật khẩu</label>
+          <input type="text" class="form-control" placeholder="Nhập địa chỉ...." name="password">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Chức Vụ</label>
+          <input type="text" class="form-control" placeholder="Nhập số điện thoại...." name="role">
         </div>
         <br> <button type="submit" class="btn btn-primary">Add</button> </br>
       </form>

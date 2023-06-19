@@ -11,11 +11,11 @@ const initWebRoute = (app) => {
 
     router.get('/login', homeController.getLoginPage);
 
-    router.get('/detail/userdetail/:id', homeController.getDetailPage);
-    router.post('/create-new-userdetail', homeController.createNewuserdetail);
-    router.post('/delete-userdetail', homeController.deleteuserdetail);
-    router.get('/edit-userdetail/:id', homeController.getEditPage);
-    router.post('/update-userdetail', homeController.postUpdateuserdetail);
+    router.get('/detail/users/:id', homeController.getUsersPage);
+    router.post('/create-new-users', homeController.createNewusers);
+    router.post('/delete-users', homeController.deleteusers);
+    router.get('/edit-users/:id', homeController.getEditPage);
+    router.post('/update-users', homeController.postUpdateusers);
 
     router.get('/brand-list', brandController.getBrandPage);
     router.get('/detail-brand/brand/:id', brandController.getDetailBrandPage);

@@ -42,29 +42,6 @@
                   <form class="col-md-6" action="/edit-category/<%= dataCategory[i].id %>" method="GET">
                     <button type="submit" class="btn btn-dark">Xem</button>
                   </form>
-                  <form class="col-md-6" action="/delete-category" method="post">
-                    <input type="text" hidden value="<%= dataCategory[i].id %>" name="categoryId" />
-                    <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-dark">Xoá</a>
-
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                      aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Xoá danh mục sản phẩm</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                          </div>
-                          <div class="modal-body">
-                            Bạn muốn xoá danh mục sản phẩm này không ?
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                            <button type="submit" class="btn btn-primary">Có</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </form>
                 </div>
               </td>
             </tr>
@@ -85,25 +62,7 @@
             <label>Hình Minh Hoạ</label>
             <input type="file" class="form-control" placeholder="Chọn hình minh hoạ" name="image">
           </div>
-          <br><a data-bs-toggle="modal" data-bs-target="#exampleModal1" class="btn btn-primary">Thêm</a></br>
-
-          <div class="modal" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Thêm danh mục sản phẩm</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  Bạn có muốn thêm danh mục sản phẩm này không?
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                  <button type="submit" class="btn btn-primary">Có</button>
-                </div>
-              </div>
-            </div>
-          </div>
+          <br><button type="submit" class="btn btn-primary">Thêm</button></br>
         </form>
       </div>
   </div>

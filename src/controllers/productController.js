@@ -23,8 +23,8 @@ let createNewProduct = async (req, res) => {
 }
 
 let deleteProduct = async (req, res) => {
-    let productId = req.body.productId;
-    await pool.execute('delete from product where id = ?', [productId])
+    let id = req.body.id;
+    await pool.execute('delete from product where id = ?', [id])
     return res.redirect('/product-list');
 }
 

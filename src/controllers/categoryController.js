@@ -23,8 +23,8 @@ let createNewCategory = async (req, res) => {
 }
 
 let deleteCategory = async (req, res) => {
-    let categoryId = req.body.categoryId;
-    await pool.execute('delete from category where id = ?', [categoryId])
+    let id = req.body.id;
+    await pool.execute('delete from category where id = ?', [id])
     return res.redirect('/category-list');
 }
 
