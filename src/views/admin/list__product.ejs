@@ -1,0 +1,38 @@
+<%- include("header.ejs")%>
+    <div class="container">
+        <h4>Danh sách người dùng</h4>
+        <a href="/add-product" class="btn btn-outline-dark">Thêm mới sản phẩm</a>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Ảnh</th>
+                <th scope="col">Tên</th>
+                <th scope="col">Mô tả</th>
+                <th scope="col">Sô lượng</th>
+                <th scope="col">Giá</th>
+                <th class="text-center" scope="col">Xem</th>
+              </tr>
+            </thead>
+            <tbody>
+                <% for(let i=0; i < dataProduct.length; i++) { %>
+                <tr>
+                    <td class="text-center">
+                        <img src="/img/<%= dataProduct[i].image %>" width="50px" style="border-radius: 5px;">
+                    </td>
+                    <td><%= dataProduct[i].name %></td>
+                    <td><%= dataProduct[i].describe %></td>
+                    <td><%= dataProduct[i].quantity%></td>
+                    <td><%= dataProduct[i].price %></td>
+                    <td>
+                      <div class="row">
+                        <form class="text-center" action="/edit-product/<%= dataProduct[i].id %>" method="GET">
+                          <button type="submit" class="btn btn-outline-dark"><i class="fa fa-clipboard-list"></i></button>
+                        </form>
+                      </div>
+                    </td>
+                </tr>
+                <% } %>
+            </tbody>
+          </table>
+    </div>
+    <%- include("footer.ejs")%>    

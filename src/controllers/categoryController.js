@@ -27,15 +27,15 @@ let createNewCategory = async (req, res) => {
 }
 
 let deleteCategory = async (req, res) => {
-    let categoryId = req.body.categoryId;
-    await pool.execute('delete from category where id = ?', [categoryId])
+    let id = req.body.id;
+    await pool.execute('delete from category where id = ?', [id])
     return res.redirect('/category-list');
 }
 
 let getEditCategoryPage = async (req, res) => {
     let id = req.params.id;
     let [category] = await pool.execute('select * from category where id = ?', [id]);
-    return res.render('admin/update__category.ejs', { dataCategory: category[0] }); // x <- y
+    return res.render('admin/view__category.ejs', { dataCategory: category[0] }); // x <- y
 }
 
 let postUpdateCategory = async (req, res) => {

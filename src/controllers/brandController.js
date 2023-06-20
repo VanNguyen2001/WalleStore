@@ -27,8 +27,8 @@ let createNewBrand = async (req, res) => {
 }
 
 let deleteBrand = async (req, res) => {
-    let brandId = req.body.brandId;
-    await pool.execute('delete from brand where id = ?', [brandId])
+    let id = req.body.id;
+    await pool.execute('delete from brand where id = ?', [id])
     return res.redirect('/brand-list');
 }
 

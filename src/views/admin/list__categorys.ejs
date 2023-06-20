@@ -1,7 +1,7 @@
 <%- include("header.ejs")%>
     <div class="container">
-        <h2 class="">Danh Mục Sản Phẩm</h2>
-        <a href="/add-category" class="btn btn-dark">Thêm Mới Danh Mục</a>
+        <h4 class="">Danh Mục Sản Phẩm</h4>
+        <a href="/add-category" class="btn btn-outline-dark">Thêm Mới Danh Mục</a>
         <table class="table">
             <thead>
               <tr>
@@ -21,12 +21,8 @@
                     <td><%= dataCategory[i].describe %></td>
                     <td class="text-center">
                       <div class="row">
-                        <form class="col-md-6" action="/edit-category/<%= dataCategory[i].id %>" method="GET">
-                          <button type="submit" class="btn btn-dark">Xem</button>
-                        </form>
-                        <form class="col-md-6" action="/delete-category" method="post">
-                          <input type="text" hidden value="<%= dataCategory[i].id %>" name="categoryId"/>
-                          <button type="submit" class="btn btn-dark">Xoá</button>
+                        <form action="/edit-category/<%= dataCategory[i].id %>" method="GET">
+                          <button type="submit" class="btn btn-outline-dark"><i class="fa fa-clipboard-list"></i></button>
                         </form>
                       </div>
                     </td>

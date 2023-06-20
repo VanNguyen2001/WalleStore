@@ -23,15 +23,15 @@ let createUser = async (req, res) => {
 }
 
 let deleteUser = async (req, res) => {
-    let userId = req.body.userId;
-    await pool.execute('delete from users where id = ?', [userId])
+    let id = req.body.id;
+    await pool.execute('delete from users where id = ?', [id])
     return res.redirect('/');
 }
 
 let editUser = async (req, res) => {
     let id = req.params.id;
     let [user] = await pool.execute('Select * from users where id = ?', [id]);
-    return res.render('admin/update__user.ejs', { dataUser: user[0] });
+    return res.render('admin/view__user.ejs', { dataUser: user[0] });
 }
 
 let updateUser = async (req, res) => {

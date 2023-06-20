@@ -1,20 +1,32 @@
 <%- include("header.ejs")%>
 <div class="container">
-    <form action="/create-new-category" method="POST" class="">
-        <div class="form-group">
-        <label>Tên Danh Mục</label>
-        <input type="text" class="form-control" placeholder="Nhập tên của hãng" name="name">
+    <h4>Thêm danh mục mới</h4>
+    <form action="/create-new-category" method="POST"  class="needs-validation">
+        <div class="form-group was-validated">
+            <label class="form-label" for="text">Tên Danh Mục</label>
+            <input required class="form-control" type="text" class="form-control" placeholder="Nhập tên của hãng" name="name">
+            <div class="invalid-feedback">
+                Yêu cầu nhập tên hảng
+            </div>
         </div>
-        <div class="form-group">
-            <label>Mô Tả</label>
-            <input type="text" class="form-control" placeholder="Thêm mô tả" name="describe">
+        <div class="form-group was-validated">
+            <label class="form-label" for="text">Mô Tả</label>
+            <input required class="form-control" type="text" class="form-control" placeholder="Thêm mô tả" name="describe">
+            <div class="invalid-feedback">
+                Yêu cầu nhập mô tả
+            </div>
         </div>
-        <div class="form-group">
-            <label>Hình Minh Hoạ</label>
-            <input type="file" class="form-control" placeholder="Chọn hình minh hoạ" name="image">
+        <div class="form-group was-validated">
+            <label class="form-label" for="text">Hình Minh Hoạ</label>
+            <input required class="form-control" type="file" class="form-control" placeholder="Chọn hình minh hoạ" name="image">
+            <div class="invalid-feedback">
+                Yêu cầu chọn ảnh minh hoạ
+            </div>
         </div>
-        <button type="submit" class="btn btn-primary">Thêm</button>
-        <a href="/category-list" class="btn btn-dark">Trở Về</a>
+        <div class="pt-1">
+            <button type="submit" class="btn btn-outline-primary">Thêm</button>
+            <a href="/category-list" class="btn btn-outline-dark">Trở Về</a>
+        </div>
     </form>
   </div>
 <%- include("footer.ejs")%>

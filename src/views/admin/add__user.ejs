@@ -1,36 +1,48 @@
 <%- include("header.ejs")%>
 <div class="container">
-    <form action="/create-user" method="POST">
-        <div class="form-group">
-          <label for="exampleInputEmail1">Họ và tên</label>
-          <input type="text" class="form-control" placeholder="Nhập họ tên" name="name">
+  <h4>Thêm người dùng mới</h4>
+    <form action="/create-user" method="POST" class="needs-validation">
+        <div class="form-group was-validated">
+          <label class="form-label" for="text">Họ và tên</label>
+          <input class="form-control" type="text" name="name" required>
+          <div class="invalid-feedback">
+              Yêu cầu nhập họ và tên
+          </div>
         </div>
-        <div class="form-group">
-            <label for="exampleInputEmail1">Giới tính</label>
-            <input type="text" class="form-control" placeholder="Nhập giới tính" name="gender">
+        <div class="form-group was-validated">
+          <label class="form-label" for="text">Giới tính</label>
+          <input class="form-control" type="text" name="gender" required>
+          <div class="invalid-feedback">
+              Yêu cầu nhập giới tính
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Ngày sinh</label>
-            <input type="date" class="form-control" placeholder="Chọn ngày sinh" name="birthDay">
+        </div>
+        <div class="form-group was-validated">
+          <label class="form-label" for="date">Ngày sinh</label>
+          <input class="form-control" type="date" name="birthDay" required>
+          <div class="invalid-feedback">
+              Yêu cầu nhập ngày sinh
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Số điện thoại</label>
-            <input type="text" class="form-control" placeholder="Nhập số điện thoại" name="phone">
+        </div>
+        <div class="form-group was-validated">
+          <label class="form-label" for="text">Số điện thoại</label>
+          <input class="form-control" type="text" name="phone" required>
+          <div class="invalid-feedback">
+              Yêu cầu nhập số điện thoại
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Địa chỉ</label>
-            <input type="text" class="form-control" placeholder="Nhập địa chỉ" name="address">
+        </div>
+        <div class="form-group was-validated">
+          <label class="form-label" for="text">Địa chỉ</label>
+          <input class="form-control" type="text" name="address" required>
+          <div class="invalid-feedback">
+              Yêu cầu nhập địa chỉ
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Mật khẩu</label>
-            <input type="text" class="form-control" placeholder="Nhập mật khẩu" name="password">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Vai trò</label>
-            <input type="text" class="form-control" placeholder="Chọn vai trò" name="role">
-          </div>
-        <button type="submit" class="btn btn-primary">Thêm</button>
-        <a class="btn btn-dark" href="/">Trở về</a>
+        </div>
+        <input hidden type="text" class="form-control" placeholder="Nhập mật khẩu" name="password">
+        <input hidden type="text" class="form-control" placeholder="Chọn vai trò" name="role">
+        <div class="pt-1">
+          <button type="submit" class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Thêm</button>
+          <a class="btn btn-outline-dark" href="/">Trở về</a>
+        </div>
       </form>
 </div>
 <%- include("footer.ejs")%>

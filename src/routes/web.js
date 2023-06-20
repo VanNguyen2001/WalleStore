@@ -3,6 +3,7 @@ import userController from '../controllers/userController'
 import brandController from '../controllers/brandController'
 import categoryController from '../controllers/categoryController'
 import homeController from '../controllers/homeController'
+import productController from '../controllers/productController'
 
 let router = express.Router();
 
@@ -28,6 +29,13 @@ const initWebRoute = (app) => {
     router.post('/delete-category', categoryController.deleteCategory);
     router.get('/edit-category/:id', categoryController.getEditCategoryPage);
     router.post('/update-category', categoryController.postUpdateCategory);
+
+    router.get('/add-product', productController.addProduct);
+    router.get('/product-list', productController.getProductPage);
+    router.post('/create-new-product', productController.createNewProduct);
+    router.post('/delete-product', productController.deleteProduct);
+    router.get('/edit-product/:id', productController.getEditProductPage);
+    router.post('/update-product', productController.postUpdateProduct);
 
     router.get('/home', homeController.homePage);
     router.get('/login', homeController.loginPage);

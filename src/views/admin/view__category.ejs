@@ -1,0 +1,79 @@
+<%- include("header.ejs")%>
+    <div class="container">
+      <div class="row">
+      <h4>Thông tin danh mục</h4>
+          <form action="/update-category" method="POST" class="row needs-validation">
+            <div class="col-md-3">
+              <div class="form-group">
+                <img src="/img/<%= dataCategory.image %>" width="100%" height="auto" style="border-radius: 15px;">
+              </div>
+            </div>
+            <div class="col-md-9">
+              <div class="form-group was-validated">
+                  <label class="form-label" for="text">Tên Hãng</label>
+                  <input required type="text" class="form-control" placeholder="Tên Của Hãng" name="name" value="<%= dataCategory.name %>">
+                  <div class="invalid-feedback">
+                    Tên hãng không được trống
+                  </div>
+                </div>
+                <div class="form-group was-validated">
+                  <label class="form-label" for="text">Thông Tin Thêm</label>
+                  <input required type="text" class="form-control" placeholder="Mô tả" name="describe" value="<%= dataCategory.describe %>">
+                  <div class="invalid-feedback">
+                    Thông tin không được trống
+                  </div>
+                </div>
+                <div class="form-group was-validated">
+                  <label class="form-label" for="text">Ảnh</label>
+                  <input required type="file" class="form-control" placeholder="Ảnh" name="image" value="<%= dataCategory.image %>">
+                  <div class="invalid-feedback">
+                    Vui lòng chọn ảnh minh hoạ
+                  </div>
+                </div>
+                <input type="text" hidden value="<%= dataCategory.id %>" name="id"/>
+                <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Cập nhật người dùng</h5>
+                      </div>
+                      <div class="modal-body">
+                        Bạn có chắc muốn thay đổi thông tin người dùng này không ?
+                      </div>
+                      <div class="modal-footer">
+                        <button type="submit" class="btn btn-info text-white">Có</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-1">
+                  <a class="btn btn-outline-info"  data-bs-toggle="modal" data-bs-target="#exampleModall">Cập nhật</a>
+                  <a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Xoá</a>
+                  <a href="/category-list" class="btn btn-outline-dark">Trở về</a>
+                </div>
+              </div>
+          </form>
+          <form action="/delete-category" method="post" class="pb-1">
+            <input type="text" hidden value="<%= dataCategory.id %>" name="id"/>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Xoá người dùng</h5>
+                  </div>
+                  <div class="modal-body">
+                    Bạn có chắc muốn xoá người dùng này không ?
+                  </div>
+                  <div class="modal-footer">
+                    <button type="submit" class="btn btn-danger">Có</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+    </div>
+    </div>
+  </div>
+    <%- include("footer.ejs")%>  
