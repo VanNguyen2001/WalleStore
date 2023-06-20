@@ -50,7 +50,7 @@ let getEditPage = async (req, res) => {
 let postUpdateusers = async (req, res) => {
     let { name, gender, birthDay, phone, address, password, role, id } = req.body;
 
-    await pool.execute('update users set name= ?, gender = ? , birthDay = ? , phone = ? , address= ? , password = ? , role = ?  where id = ?',
+    await pool.execute('update users set name = ?, gender = ? , birthDay = ? , phone = ? , address= ? , password = ? , role = ?  where id = ?',
         [name, gender, birthDay, phone, address, password, role, id]);
 
     return res.redirect('/');
