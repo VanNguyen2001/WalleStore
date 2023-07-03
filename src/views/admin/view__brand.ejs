@@ -1,42 +1,44 @@
 <%- include("header.ejs")%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script type="text/javascript">
+    function chooseFile(fileInput) {
+        if(fileInput.files && fileInput.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e){
+                $('#image').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+</script>
+
     <div class="container">
       <h4>Thông tin hãng</h4>
           <form action="/update-brand" method="POST" class="row needs-validation">
             <div class="col-md-3">
-              <div class="form-group text-center">
-                <img src="/img/<%= dataBrand.logo %>" width="100%" height="auto" style="border-radius: 15px;">
-              </div>
+              <a class="btn" onclick="document.getElementById('imageFile').click(); return false;">
+                <img src="/img/<%= dataBrand.logo %>" class="image__hover" id="image" width="100%" height="auto">    
+              </a>
+            <input hidden type="file" class="form-control" id="imageFile" onchange="chooseFile(this)" accept="image/gif, image/jpeg, image/png" name="logo">
             </div>
             <div class="col-md-9">
               <div class="form-group was-validated">
-                <label class="form-label" for="text">Tên Hãng</label>
-                <input required type="text" class="form-control" placeholder="Tên Của Hãng" name="name" value="<%= dataBrand.name %>">
+                <label class="form-label" for="text">Tên hãng</label>
+                <input required type="text" class="form-control" placeholder="Tên Của Hãng" name="brand_name" value="<%= dataBrand.brand_name %>">
                 <div class="invalid-feedback">
-                  Tên của hãng không được trống
+                  Tên hãng không được trống
                 </div>
               </div>
               <div class="form-group was-validated">
-                <label class="form-label" for="text">Thông Tin Thêm</label>
-                <input required type="text" class="form-control" placeholder="Mô tả" name="describe" value="<%= dataBrand.describe %>">
-                <div class="invalid-feedback">
-                  Mô tả không được trống
-                </div>
+                <label class="form-label" for="text">Đường dẫn</label>
+                <input type="url" class="form-control" placeholder="https://diachitrangcuahang.com"
+                pattern="https://.*" name="link" value="<%= dataBrand.link %>" required>
               </div>
-              <div class="form-group was-validated">
-                <label class="form-label" for="text">Đường Dẫn</label>
-                <input required type="text" class="form-control" placeholder="Đường dẫn" name="link" value="<%= dataBrand.link %>">
-                <div class="invalid-feedback">
-                  Đường dẫn không được trống
-                </div>
+              <div class="form-group">
+                <label class="form-label" for="text">Thông tin thêm</label>
+                <textarea required type="text" class="form-control" placeholder="Mô tả" name="brand_describe"><%= dataBrand.brand_describe %></textarea>
               </div>
-              <div class="form-group was-validated">
-                <label class="form-label" for="file">Logo</label>
-                <input required type="file" class="form-control" placeholder="Logo" name="logo" value="<%= dataBrand.logo %>">
-                <div class="invalid-feedback">
-                  Vui lòng chọn ảnh minh hoạ
-                </div>
-              </div>
-              <input type="text" hidden value="<%= dataBrand.id %>" name="id"/>
+              <input type="text" hidden value="<%= dataBrand.brand_id %>" name="brand_id"/>
               <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -62,7 +64,7 @@
             </div>
           </form>
           <form action="/delete-brand" method="post" class="pb-1">
-            <input type="text" hidden value="<%= dataBrand.id %>" name="id"/>
+            <input type="text" hidden value="<%= dataBrand.brand_id %>" name="brand_id"/>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">

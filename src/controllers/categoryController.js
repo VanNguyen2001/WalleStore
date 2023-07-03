@@ -2,15 +2,15 @@ import pool from '../configs/connectDB';
 
 
 let getCategoryPage = async (req, res) => {
-    const [rows, fields] = await pool.execute('SELECT * FROM category');
+    const [rows] = await pool.execute('SELECT * FROM categorys');
 
-    return res.render('admin/list__categorys.ejs', { dataCategory: rows, test: 'abc string test' })
+    return res.render('admin/list__categorys.ejs', { dataCategory: rows})
 }
 
 let getDetailCategoryPage = async (req, res) => {
-    let categoryId = req.params.id;
-    let [category] = await pool.execute('select * from category where id = ?', [categoryId]);
-    return res.send(JSON.stringify(category))
+    let category_id = req.params.id;
+    let [categorys] = await pool.execute('select * from categorys where category_id = ?', [category_id]);
+    return res.send(JSON.stringify(categorys))
 }
 
 let addCategory = async (req, res) => {
@@ -18,31 +18,31 @@ let addCategory = async (req, res) => {
 }
 
 let createNewCategory = async (req, res) => {
-    let { name, describe, image } = req.body;
+    let { category_name, category_describe, category_image } = req.body;
 
-    await pool.execute('INSERT INTO `category`(`name`, `describe`, `image`) VALUES (?, ?, ?)',
-        [name, describe, image]);
+    await pool.execute('INSERT INTO `categorys`(`category_name`, `category_describe`, `category_image`) VALUES (?,?,?)',
+        [category_name, category_describe, category_image]);
 
     return res.redirect('/category-list')
 }
 
 let deleteCategory = async (req, res) => {
-    let id = req.body.id;
-    await pool.execute('delete from category where id = ?', [id])
+    let category_id = req.body.category_id;
+    await pool.execute('delete from categorys where category_id = ?', [category_id])
     return res.redirect('/category-list');
 }
 
 let getEditCategoryPage = async (req, res) => {
-    let id = req.params.id;
-    let [category] = await pool.execute('select * from category where id = ?', [id]);
-    return res.render('admin/view__category.ejs', { dataCategory: category[0] }); // x <- y
+    let category_id = req.params.category_id;
+    let [categorys] = await pool.execute('select * from categorys where category_id = ?', [category_id]);
+    return res.render('admin/view__category.ejs', { dataCategory: categorys[0] }); // x <- y
 }
 
 let postUpdateCategory = async (req, res) => {
-    let { name, describe, image, id } = req.body;
+    let { category_name, category_describe, category_image, category_id } = req.body;
 
-    await pool.execute('UPDATE `category` SET `name`= ? ,`describe`= ?,`image`= ? WHERE `id`= ?',
-        [name, describe, image, id]);
+    await pool.execute('UPDATE `categorys` SET `category_name`= ? ,`category_describe`= ?,`category_image`= ? WHERE `category_id`= ?',
+        [category_name, category_describe, category_image, category_id]);
 
     return res.redirect('/category-list');
 }

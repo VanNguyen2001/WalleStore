@@ -1,36 +1,39 @@
 <%- include("header.ejs")%>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script type="text/javascript">
+    function chooseFile(fileInput) {
+        if(fileInput.files && fileInput.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e){
+                $('#image').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+</script>
     <div class="container">
       <div class="row">
       <h4>Thông tin danh mục</h4>
           <form action="/update-category" method="POST" class="row needs-validation">
             <div class="col-md-3">
-              <div class="form-group">
-                <img src="/img/<%= dataCategory.image %>" width="100%" height="auto" style="border-radius: 15px;">
-              </div>
+              <a class="btn" onclick="document.getElementById('imageFile').click(); return false;">
+                <img src="/img/<%= dataCategory.category_image %>" class="image__hover" id="image" width="100%" height="auto">    
+              </a>
+              <input hidden type="file" class="form-control" placeholder="Nhập tên của hãng" id="imageFile" onchange="chooseFile(this)" accept="image/gif, image/jpeg, image/png" name="category_image">
             </div>
             <div class="col-md-9">
               <div class="form-group was-validated">
-                  <label class="form-label" for="text">Tên Hãng</label>
-                  <input required type="text" class="form-control" placeholder="Tên Của Hãng" name="name" value="<%= dataCategory.name %>">
+                  <label class="form-label" for="text">Tên danh mục</label>
+                  <input required type="text" class="form-control" placeholder="Tên Của Hãng" name="category_name" value="<%= dataCategory.category_name %>">
                   <div class="invalid-feedback">
-                    Tên hãng không được trống
+                    Tên danh mục không được trống
                   </div>
                 </div>
                 <div class="form-group was-validated">
-                  <label class="form-label" for="text">Thông Tin Thêm</label>
-                  <input required type="text" class="form-control" placeholder="Mô tả" name="describe" value="<%= dataCategory.describe %>">
-                  <div class="invalid-feedback">
-                    Thông tin không được trống
-                  </div>
+                  <label class="form-label" for="text">Mô tả của danh mục</label>
+                  <textarea required type="text" class="form-control" placeholder="Mô tả" name="category_describe"><%= dataCategory.category_describe %></textarea>
                 </div>
-                <div class="form-group was-validated">
-                  <label class="form-label" for="text">Ảnh</label>
-                  <input required type="file" class="form-control" placeholder="Ảnh" name="image" value="<%= dataCategory.image %>">
-                  <div class="invalid-feedback">
-                    Vui lòng chọn ảnh minh hoạ
-                  </div>
-                </div>
-                <input type="text" hidden value="<%= dataCategory.id %>" name="id"/>
+                <input type="text" hidden value="<%= dataCategory.category_id %>" name="category_id"/>
                 <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog">
                     <div class="modal-content">
@@ -55,7 +58,7 @@
               </div>
           </form>
           <form action="/delete-category" method="post" class="pb-1">
-            <input type="text" hidden value="<%= dataCategory.id %>" name="id"/>
+            <input type="text" hidden value="<%= dataCategory.category_id %>" name="category_id"/>
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">

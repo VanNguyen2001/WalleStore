@@ -1,16 +1,15 @@
 import pool from '../configs/connectDB';
 
-
 let getBrandPage = async (req, res) => {
-    const [rows, fields] = await pool.execute('SELECT * FROM brand');
+    const [rows, fields] = await pool.execute('SELECT * FROM brands');
 
-    return res.render('admin/list__brands.ejs', { dataBrand: rows, test: 'abc string test' })
+    return res.render('admin/list__brands.ejs', { dataBrand: rows})
 }
 
 let getDetailBrandPage = async (req, res) => {
-    let brandId = req.params.id;
-    let [brand] = await pool.execute('select * from brand where id = ?', [brandId]);
-    return res.send(JSON.stringify(brand))
+    let brand_id = req.params.brand_id;
+    let [brands] = await pool.execute('select * from brands where brand_id = ?', [brand_id]);
+    return res.send(JSON.stringify(brands))
 }
 
 let addBrand = async (req, res) => {
@@ -18,31 +17,31 @@ let addBrand = async (req, res) => {
 }
 
 let createNewBrand = async (req, res) => {
-    let { name, describe, link, logo } = req.body;
+    let { brand_name, brand_describe, link, logo } = req.body;
 
-    await pool.execute('INSERT INTO `brand`(`name`, `describe`, `link`, `logo`) VALUES (?, ?, ?, ?)',
-        [name, describe, link, logo]);
+    await pool.execute('INSERT INTO `brands`(`brand_name`, `brand_describe`, `link`, `logo`) VALUES (?, ?, ?, ?)',
+        [brand_name, brand_describe, link, logo]);
 
     return res.redirect('/brand-list')
 }
 
 let deleteBrand = async (req, res) => {
-    let id = req.body.id;
-    await pool.execute('delete from brand where id = ?', [id])
+    let brand_id = req.body.brand_id;
+    await pool.execute('delete from brands where brand_id = ?', [brand_id])
     return res.redirect('/brand-list');
 }
 
 let getEditBrandPage = async (req, res) => {
-    let id = req.params.id;
-    let [brand] = await pool.execute('select * from brand where id = ?', [id]);
-    return res.render('admin/update__brand.ejs', { dataBrand: brand[0] }); // x <- y
+    let brand_id = req.params.brand_id;
+    let [brands] = await pool.execute('select * from brands where brand_id = ?', [brand_id]);
+    return res.render('admin/view__brand.ejs', { dataBrand: brands[0] }); // x <- y
 }
 
 let postUpdateBrand = async (req, res) => {
-    let { name, describe, link, logo, id } = req.body;
+    let { brand_name, brand_describe, link, logo, brand_id } = req.body;
 
-    await pool.execute('UPDATE `brand` SET `name`= ? ,`describe`= ?,`link`= ? ,`logo`= ? WHERE `id`= ?',
-        [name, describe, link, logo, id]);
+    await pool.execute('UPDATE `brands` SET `brand_name`= ? ,`brand_describe`= ?,`link`= ? ,`logo`= ? WHERE `brand_id`= ?',
+        [brand_name, brand_describe, link, logo, brand_id]);
 
     return res.redirect('/brand-list');
 }

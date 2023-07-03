@@ -1,0 +1,12 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<script type="text/javascript">
+    function chooseFile(fileInput) {
+        if(fileInput.files && fileInput.files[0]){
+            var reader = new FileReader();
+            reader.onload = function (e){
+                $('#image').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    }
+</script>

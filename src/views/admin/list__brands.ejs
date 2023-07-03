@@ -17,11 +17,11 @@
                   <td class="text-center">
                     <img src="/img/<%= dataBrand[i].logo %>" width="50px" height="auto" style="border-radius: 5px;">
                   </td>
-                  <td><%= dataBrand[i].name %></td>
-                  <td><%= dataBrand[i].describe %></td>
+                  <td><%= dataBrand[i].brand_name %></td>
+                  <td><%= dataBrand[i].brand_describe %></td>
                   <td>
                       <div class="row">
-                        <form class="text-center" action="/edit-brand/<%= dataBrand[i].id %>" method="GET">
+                        <form class="text-center" action="/edit-brand/<%= dataBrand[i].brand_id %>" method="GET">
                           <button type="submit" class="btn btn-outline-dark"><i class="fa fa-clipboard-list"></i></button>
                         </form>
                       </div>

@@ -1,66 +1,65 @@
 <%- include("header.ejs")%>
+<%- include("update_image_script.ejs")%>
 <div class="container">
-    <h4>Thêm Mới Hãng</h4>
+    <h4>Thêm mới sản phẩm</h4>
     <form action="/create-new-product" method="POST" class="needs-validation">
-        <div class="form-group was-validated">
-            <label lass="form-label" for="text">Tên sản phẩm</label>
-            <input type="text" class="form-control" placeholder="Nhập tên của hãng" name="name" required>
-            <div class="invalid-feedback">
-                Yêu cầu nhập tên sản phẩm
+        <div class="row">
+            <div class="form-group was-validated col-md-2">
+                <label lass="form-label" for="file">Ảnh sản phẩm</label>
+                <a class="btn" onclick="document.getElementById('imageFile').click(); return false;">
+                    <img src="/img/product.png" class="image__hover" id="image" width="100%" height="auto">    
+                </a>
+                <input hidden type="file" class="form-control" name="product_image" id="imageFile" onchange="chooseFile(this)" accept="image/gif, image/jpeg, image/png" required>
+                <div class="invalid-feedback text-center">
+                    Yêu cầu thay đổi ảnh
+                </div>
+            </div>
+            <div class="col-md-10">
+                <div class="form-group was-validated">
+                    <label lass="form-label" for="text">Tên sản phẩm</label>
+                    <input type="text" class="form-control" placeholder="Nhập tên của sản phẩm" name="product_name" required>
+                </div>
+                <div class="form-group">
+                    <label lass="form-label" for="text">Thông mô tả sản phẩm</label>
+                    <textarea type="text" class="form-control" placeholder="Thêm mô tả của sản phẩm" name="product_describe" required></textarea>
+                </div>
             </div>
         </div>
         <div class="form-group was-validated">
-            <label lass="form-label" for="text">Thông mô tả sản phẩm</label>
-            <input type="text" class="form-control" placeholder="Thêm mô tả" name="describe" required>
-            <div class="invalid-feedback">
-                Yêu cầu nhập mô tả
-            </div>
+            <label lass="form-label" for="number">Số lượng sản phẩm</label>
+            <input type="number" min="1" value="1" class="form-control" placeholder="Nhập đường dẫn" name="quantity" required>
         </div>
         <div class="form-group was-validated">
-            <label lass="form-label" for="text">Số lượng sản phẩm</label>
-            <input type="text" class="form-control" placeholder="Nhập đường dẫn" name="quantity" required>
-            <div class="invalid-feedback">
-                Chọn số lượng sản phẩm
-            </div>
+            <label lass="form-label" for="number">Giá sản phẩm</label>
+            <input type="number" value="0" class="form-control" placeholder="Chọn hình đại diện" name="price" required>
         </div>
         <div class="form-group was-validated">
-            <label lass="form-label" for="text">Giá sản phẩm</label>
-            <input type="text" class="form-control" placeholder="Chọn hình đại diện" name="price" required>
-            <div class="invalid-feedback">
-                Yêu cầu nhập giá sản phẩm
-            </div>
+            <label lass="form-label" for="number">Đánh giá</label>
+            <input type="number" value="0" min="0" class="form-control" placeholder="Chọn hình đại diện" name="view" required>
         </div>
-        <div class="form-group was-validated">
-            <label lass="form-label" for="text">Đánh giá</label>
-            <input type="text" class="form-control" placeholder="Chọn hình đại diện" name="view" required>
-            <div class="invalid-feedback">
-                Yêu cầu nhập đánh giá
-            </div>
-        </div>
-        <div class="form-group was-validated">
+        <div class="form-group">
             <label lass="form-label" for="text">Danh mục</label>
-            <input type="text" class="form-control" placeholder="Chọn hình đại diện" name="categoryId" required>
-            <div class="invalid-feedback">
-                Yêu cầu chọn danh mục
-            </div>
+            <select class="form-select form-select-sm" aria-label="Default select example" name="category_id">
+                <% for(let i=0; i < dataCategory.length; i++) { %>
+                <option value="<%= dataCategory[i].category_id %>">
+                    <%= dataCategory[i].category_name %>
+                </option>
+                <% } %>
+            </select>
         </div>
-        <div class="form-group was-validated">
+        <div class="form-group">
             <label lass="form-label" for="text">Hãng</label>
-            <input type="text" class="form-control" placeholder="Chọn hình đại diện" name="brandId" required>
-            <div class="invalid-feedback">
-                Yêu cầu chọn hãng
-            </div>
-        </div>
-        <div class="form-group was-validated">
-            <label lass="form-label" for="file">Ảnh sản phẩm</label>
-            <input type="file" class="form-control" placeholder="Chọn hình đại diện" name="image" required>
-            <div class="invalid-feedback">
-                Yêu cầu chọn ảnh sản phẩm
-            </div>
+            <select class="form-select form-select-sm" aria-label="Default select example" name="brand_id">
+                <% for(let i=0; i < dataBrand.length; i++) { %>
+                <option value="<%= dataBrand[i].brand_id %>">
+                    <%= dataBrand[i].brand_name %>
+                </option>
+                <% } %>
+            </select>
         </div>
         <div class="pt-1">
             <button type="submit" class="btn btn-outline-info">Thêm</button>
-            <a href="/brand-list" class="btn btn-outline-dark">Trở Về</a>
+            <a href="/product-list" class="btn btn-outline-dark">Trở về</a>
         </div>
     </form>
 </div>

@@ -8,20 +8,20 @@
                 <th scope="col" class="text-center">Ảnh Danh mục</th>
                 <th scope="col">Tên Danh Mục</th>
                 <th scope="col">Mô Tả Danh Mục</th>
-                <th class="text-center" scope="col">Tuỳ chọn</th>
+                <th class="text-center" scope="col">Xem</th>
               </tr>
             </thead>
             <tbody>
                 <% for(let i=0; i < dataCategory.length; i++) { %>
                 <tr>
                     <td class="text-center">
-                      <img src="/img/<%= dataCategory[i].image %>" width="50px" style="border-radius: 5px;">
+                      <img src="/img/<%= dataCategory[i].category_image %>" width="50px" style="border-radius: 5px;">
                     </td>
-                    <td><%= dataCategory[i].name %></td>
-                    <td><%= dataCategory[i].describe %></td>
+                    <td><%= dataCategory[i].category_name %></td>
+                    <td><%= dataCategory[i].category_describe %></td>
                     <td class="text-center">
                       <div class="row">
-                        <form action="/edit-category/<%= dataCategory[i].id %>" method="GET">
+                        <form action="/edit-category/<%= dataCategory[i].category_id %>" method="GET">
                           <button type="submit" class="btn btn-outline-dark"><i class="fa fa-clipboard-list"></i></button>
                         </form>
                       </div>
