@@ -1,27 +1,40 @@
 <%- include("header.ejs")%>
     <div class="container">
-        <h2 class="">Danh Mục Sản Phẩm</h2>
+        <h2 class="">Sản Phẩm</h2>
         <a href="/add-product" class="btn btn-dark">Thêm Mới Sản Phẩm</a>
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col" class="text-center">Ảnh Sản phẩm</th>
                     <th scope="col">Tên Sản Phẩm</th>
-                    <th scope="col">Mô Tả Sản Phẩm</th>
+                    <th scope="col">Số Lượng</th>
+                    <th scope="col">Giá</th>
+                    <th scope="col">Mô tả</th>
+                    <th scope="col">Hình Ảnh</th>
+                    <th scope="col">View</th>
+
                     <th class="text-center" scope="col">Tuỳ chọn</th>
                 </tr>
             </thead>
             <tbody>
                 <% for(let i=0; i < dataProduct.length; i++) { %>
                     <tr>
-                        <td class="text-center">
-                            <img src="/img/<%= dataProduct[i].image %>" width="50px" style="border-radius: 5px;">
-                        </td>
                         <td>
                             <%= dataProduct[i].name %>
                         </td>
                         <td>
+                            <%= dataProduct[i].quantity %>
+                        </td>
+                        <td>
+                            <%= dataProduct[i].price %>
+                        </td>
+                        <td>
                             <%= dataProduct[i].describe %>
+                        </td>
+                        <td>
+                            <img src="/img/<%= dataProduct[i].image %>" width="50px" style="border-radius: 5px;">
+                        </td>
+                        <td>
+                            <%= dataProduct[i].view %>
                         </td>
                         <td class="text-center">
                             <div class="row">

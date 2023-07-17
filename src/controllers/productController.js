@@ -20,7 +20,7 @@ let addProduct = async (req, res) => {
 let createNewProduct = async (req, res) => {
     let { name, quantity, price, describe, image, view, categoryID, brandID } = req.body;
 
-    await pool.execute('INSERT INTO `product`(`name`, `quantity`,`price` `describe`, `image`,`view`,`categoryID`,`brandID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+    await pool.execute('INSERT INTO `product`(`name`, `quantity`, `price`, `describe`, `image`, `view`, `categoryID`, `brandID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
         [name, quantity, price, describe, image, view, categoryID, brandID]);
 
     return res.redirect('/product-list')
@@ -40,7 +40,6 @@ let getEditProductPage = async (req, res) => {
 
 let postUpdateProduct = async (req, res) => {
     let { name, quantity, price, describe, image, view, categoryID, brandID, id } = req.body;
-
     await pool.execute('UPDATE `product` SET `name`= ? ,`quantity`= ?,`price`= ?,`describe`= ?,`image`= ?,`view`= ?,`categoryID`= ?,`brandID`= ? WHERE `id`= ?',
         [name, quantity, price, describe, image, view, categoryID, brandID, id]);
 

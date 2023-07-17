@@ -1,40 +1,46 @@
 <%- include("header.ejs")%>
-    <div class="container">
-        <h4 class="">Danh Mục Các Hãng</h4>
-        <a href="/add-brand" class="btn btn-dark">Thêm Hãng Mới</a>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col" class="text-center">Hình Đại Diện</th>
-                <th scope="col">Tên Hãng</th>
-                <th scope="col">Thông Tin Thêm</th>
-                <th scope="col">Đường Dẫn Đến Trang Chủ</th>
-                <th class="text-center" scope="col">Tuỳ chọn</th>
-              </tr>
-            </thead>
-            <tbody>
-                <% for(let i=0; i < dataBrand.length; i++) { %>
-                <tr>
-                  <td class="text-center">
-                    <img src="/img/<%= dataBrand[i].logo %>" width="50px" height="auto" style="border-radius: 5px;">
-                  </td>
-                  <td><%= dataBrand[i].name %></td>
-                  <td><%= dataBrand[i].describe %></td>
-                  <td><%= dataBrand[i].link %></td>
-                  <td>
-                      <div class="row">
-                        <form class="col-md-6 text-center" action="/edit-brand/<%= dataBrand[i].id %>" method="GET">
-                          <button type="submit" class="btn btn-dark">Xem</button>
-                        </form>
-                        <form class="col-md-6 text-center" action="/delete-brand" method="post">
-                          <input type="text" hidden value="<%= dataBrand[i].id %>" name="brandId"/>
-                          <button type="submit" class="btn btn-dark">Xoá</button>
-                        </form>
-                      </div>
-                    </td>
-                </tr>
-                <% } %>
-            </tbody>
-          </table>
-    </div>
-<%- include("footer.ejs")%>  
+  <div class="container">
+    <h4 class="">Danh Mục Các Hãng</h4>
+    <a href="/add-brand" class="btn btn-dark">Thêm Hãng Mới</a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" class="text-center">Hình Đại Diện</th>
+          <th scope="col">Tên Hãng</th>
+          <th scope="col">Thông Tin Thêm</th>
+          <th scope="col">Đường Dẫn Đến Trang Chủ</th>
+          <th class="text-center" scope="col">Tuỳ chọn</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% for(let i=0; i < dataBrand.length; i++) { %>
+          <tr>
+            <td class="text-center">
+              <img src="/img/<%= dataBrand[i].logo %>" width="50px" height="auto" style="border-radius: 5px;">
+            </td>
+            <td>
+              <%= dataBrand[i].name %>
+            </td>
+            <td>
+              <%= dataBrand[i].describe %>
+            </td>
+            <td>
+              <%= dataBrand[i].link %>
+            </td>
+            <td>
+              <div class="row">
+                <form class="col-md-6 text-center" action="/edit-brand/<%= dataBrand[i].id %>" method="GET">
+                  <button type="submit" class="btn btn-dark">Xem</button>
+                </form>
+                <form class="col-md-6 text-center" action="/delete-brand" method="post">
+                  <input type="text" hidden value="<%= dataBrand[i].id %>" name="brandId" />
+                  <button type="submit" class="btn btn-dark">Xoá</button>
+                </form>
+              </div>
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+  </div>
+  <%- include("footer.ejs")%>

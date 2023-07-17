@@ -9,15 +9,39 @@
             </div>
             <div class="form-group">
                 <label for="exampleInputEmail1">Tên Sản Phẩm</label>
-                <input type="text" class="form-control" placeholder="Tên Của Hãng" name="name"
+                <input type="text" class="form-control" placeholder="Tên Sản Phẩm" name="name"
                     value="<%= dataProduct.name %>">
             </div>
             <div class="form-group">
-                <label for="exampleInputEmail1">Thông Tin Sản Phẩm</label>
+                <label for="exampleInputEmail1">Số Lượng</label>
+                <input type="text" class="form-control" placeholder="Số lượng" name="quantity"
+                    value="<%= dataProduct.quantity %>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Giá</label>
+                <input type="text" class="form-control" placeholder="Giá" name="price" value="<%= dataProduct.price %>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Mô Tả</label>
                 <input type="text" class="form-control" placeholder="Mô tả" name="describe"
                     value="<%= dataProduct.describe %>">
             </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">View</label>
+                <input type="text" class="form-control" placeholder="" name="view" value="<%= dataProduct.view %>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">CategoryID</label>
+                <input type="text" class="form-control" placeholder="" name="categoryID"
+                    value="<%= dataProduct.categoryID %>">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">BrandID</label>
+                <input type="text" class="form-control" placeholder="" name="brandID"
+                    value="<%= dataProduct.brandID %>">
+            </div>
             <input type="text" hidden value="<%= dataProduct.id %>" name="id" />
+            <br></br>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
     </div>

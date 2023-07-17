@@ -44,6 +44,7 @@ let postUpdateCategory = async (req, res) => {
     await pool.execute('UPDATE `category` SET `name`= ? ,`describe`= ?,`image`= ? WHERE `id`= ?',
         [name, describe, image, id]);
 
+
     return res.redirect('/category-list');
 }
 

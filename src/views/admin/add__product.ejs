@@ -1,20 +1,41 @@
 <%- include("header.ejs")%>
     <div class="container">
-        <form action="/create-new-product" method="POST" class="">
+        <form action="/create-new-product" method="POST" class="col-md-6 offset-md-3 pt-5">
             <div class="form-group">
-                <label>Tên Sản Phẩmc</label>
-                <input type="text" class="form-control" placeholder="Nhập tên của hãng" name="name">
+                <label>Tên Sản Phẩm</label>
+                <input type="text" class="form-control" placeholder="Nhập tên của sản phẩm" name="name">
             </div>
             <div class="form-group">
-                <label>Mô Tả Sản Phẩm</label>
-                <input type="text" class="form-control" placeholder="Thêm mô tả" name="describe">
+                <label>Số Lượng</label>
+                <input type="text" class="form-control" placeholder="Số lượng" name="quantity">
             </div>
             <div class="form-group">
-                <label>Hình Minh Hoạ</label>
+                <label>Giá</label>
+                <input type="text" class="form-control" placeholder="Giá" name="price">
+            </div>
+            <div class="form-group">
+                <label>Mô tả</label>
+                <input type="text" class="form-control" placeholder="Mô tả" name="describe">
+            </div>
+            <div class="form-group">
+                <label>Hình Ảnh</label>
                 <input type="file" class="form-control" placeholder="Chọn hình minh hoạ" name="image">
             </div>
-            <button type="submit" class="btn btn-primary">Thêm</button>
+            <div class="form-group">
+                <label>View</label>
+                <input type="text" class="form-control" placeholder="" name="view">
+            </div>
+            <div class="form-group">
+                <label>CategoryID</label>
+                <input type="text" class="form-control" placeholder="" name="categoryID">
+            </div>
+            <div class="form-group">
+                <label>BrandID</label>
+                <input type="text" class="form-control" placeholder="" name="brandID">
+            </div>
+            <br><button type="submit" class="btn btn-primary">Thêm</button>
             <a href="/product-list" class="btn btn-dark">Trở Về</a>
+            </br>
         </form>
     </div>
     <%- include("footer.ejs")%>
