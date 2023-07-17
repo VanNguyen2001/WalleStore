@@ -16,5 +16,5 @@ initWebRoute(app)
 initApiRoute(app)
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`Trang web đang được chạy ở cổng ${port}`)
 })

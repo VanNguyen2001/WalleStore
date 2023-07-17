@@ -94,157 +94,31 @@
                         </h2>
                     </div>
                     <div class="row products__filters">
-                        <div class="col-md-4 products__item products__line active-product"  data-filter=".delicacies">
-                            <h3 class="products__title">Điện Thoại Di Động</h3>
-                            <span class="products_stock">3 Loại</span>
+                        <% for(let i=0; i < dataCategory.length; i++) { %>
+                        <div class="col-md-4 products__item products__line active-product"  data-filter=".a<%= dataCategory[i].category_id %>">
+                            <h3 class="products__title"><%= dataCategory[i].category_name %></h3>
+                            <span class="products_stock"><%= dataCategory[i].category_describe %></span>
                         </div>
-                        <div class="col-md-4 products__item products__line"  data-filter=".coffee">
-                            <h3 class="products__title">Máy Tính Bảng</h3>
-                            <span class="products_stock">3 Loại</span>
-                        </div>
-                        <div class="col-md-4 products__item"  data-filter=".cake">
-                            <h3 class="products__title">Máy Tính Cá Nhân</h3>
-                            <span class="products_stock">3 Loại</span>
-                        </div>
+                        <% } %>
                     </div>
-
                     <div class="products__content grid row">
                         <!--==================== WW ====================-->
-                        <article class="products__card delicacies col-md-4 p-5">
+                        <% for(let i=0; i < dataProduct.length; i++) { %>
+                        <article class="products__card a<%= dataProduct[i].category_id %> col-md-4 p-5">
                             <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
+                                <img src="/img/<%= dataProduct[i].product_image %>" alt="" class="products__img">
                             </div>
 
                             <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
+                                <h2 class="product__name"><%= dataProduct[i].product_name %></h2>
+                                <h3 class="products__price"><%= dataProduct[i].price %></h3>
+                                <h4 class="products__description"><%= dataProduct[i].product_describe %></h4>
                                 <button class="button products__button">
                                     <i class='bx bx-shopping-bag'></i>
                                 </button>
                             </div>
                         </article>
-
-                        <article class="products__card delicacies col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone2.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">Samsung Galaxy S22 Ultra 5G</h2>
-                                <h3 class="products__price">Chính 108 MP & Phụ 12 MP, 10 MP, 10 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Đỏ, trắng, đen, xanh lá.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card delicacies col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone3.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 14 Pro Max</h2>
-                                <h3 class="products__price">Chính 48 MP & Phụ 12 MP, 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Đen, tím, vàng, bạc.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-                        <!--==================== ROBO ====================-->
-                        <article class="products__card coffee col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card coffee col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card coffee col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <!--==================== BEAR ====================-->
-                        <article class="products__card cake col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card cake col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
-
-                        <article class="products__card cake col-md-4 p-5">
-                            <div class="products__shape">
-                                <img src="/img/phone1.jpg" alt="" class="products__img">
-                            </div>
-
-                            <div class="products__data">
-                                <h2 class="product__name">iPhone 13 Pro Max</h2>
-                                <h3 class="products__price">3 camera 12 MP.</h3>
-                                <h4 class="products__description">Các phiên bản màu: Vàng đồng, xám, bạc, xanh dương.</h4>
-                                <button class="button products__button">
-                                    <i class='bx bx-shopping-bag'></i>
-                                </button>
-                            </div>
-                        </article>
+                        <% } %>
                         <a href="#" class="quality__button p-3">
                             Xem nhiều hơn
                             <i class='bx bx-right-arrow-alt'></i>
