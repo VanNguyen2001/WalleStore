@@ -1,0 +1,13 @@
+<%- include("header.ejs")%>
+    <div class="container">
+        <h4>Nhà kho</h4>
+        <div class="row">
+            <% for(let i=0; i < dataProduct.length; i++) { %>
+            <div class="col-md-3 cart">
+                <img src="/img/<%= dataProduct[i].product_image %>" width="50px" style="border-radius: 5px;">
+                <td><%= dataProduct[i].quantity%></td>
+            </div>
+            <% } %>
+        </div>
+    </div>
+    <%- include("footer.ejs")%>    

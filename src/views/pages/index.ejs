@@ -106,9 +106,10 @@
                         <% for(let i=0; i < dataProduct.length; i++) { %>
                         <article class="products__card a<%= dataProduct[i].category_id %> col-md-4 p-5">
                             <div class="products__shape">
-                                <img src="/img/<%= dataProduct[i].product_image %>" alt="" class="products__img">
+                            <form class="text-center" action="/detail-product/<%= dataProduct[i].product_id %>" method="GET">
+                                <button type="submit" class="bg-white"><img src="/img/<%= dataProduct[i].product_image %>" alt="" class="products__img"></button>
+                            </form>
                             </div>
-
                             <div class="products__data">
                                 <h2 class="product__name"><%= dataProduct[i].product_name %></h2>
                                 <h3 class="products__price"><%= dataProduct[i].price %></h3>

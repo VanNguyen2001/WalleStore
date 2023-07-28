@@ -39,7 +39,23 @@
               <i class="fas fa-lock"></i>
               <input type="password" placeholder="Mật khẩu" name="password"/>
             </div>
-              <input hidden type="text" name="gender">
+            <div class="form-group was-validated">
+              <label class="form-label" for="radio">Giới tính</label>
+              <fieldset class="row">
+                <div class="col-md-1">
+                  <input type="radio" name="gender" value="Nam">
+                  <label for="radio">Nam</label>
+                </div>
+                <div class="col-md-1">
+                  <input type="radio" name="gender" value="Nữ">
+                  <label for="radio">Nữ</label>
+                </div>
+                <div class="col-md-1">
+                  <input type="radio" name="gender" value="Khác" checked>
+                  <label for="louie">Khác</label>
+                </div>
+            </fieldset>
+            </div>
               <input hidden type="date" name="birthDay">
               <input hidden type="text" name="address">
               <input hidden type="text" name="role">
