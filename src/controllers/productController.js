@@ -4,7 +4,7 @@ import pool from '../configs/connectDB';
 let getProductPage = async (req, res) => {
     const [rows] = await pool.execute('SELECT * FROM products');
 
-    return res.render('admin/list__product.ejs', { dataProduct: rows})
+    return res.render('admin/list__product.ejs', { dataProduct: rows })
 }
 
 let getDetailProductPage = async (req, res) => {
@@ -16,7 +16,7 @@ let getDetailProductPage = async (req, res) => {
 let addProduct = async (req, res) => {
     const [brand] = await pool.execute('SELECT * FROM brands');
     const [category] = await pool.execute('SELECT * FROM categorys');
-    return res.render('admin/add__product.ejs', {dataBrand: brand, dataCategory: category})
+    return res.render('admin/add__product.ejs', { dataBrand: brand, dataCategory: category })
 }
 
 let createNewProduct = async (req, res) => {
@@ -41,10 +41,10 @@ let getEditProductPage = async (req, res) => {
 }
 
 let postUpdateProduct = async (req, res) => {
-    let { product_name, product_describe, quantity, price, product_image, view, brand_id, category_id } = req.body;
+    let { product_name, product_describe, quantity, price, product_image, view, brand_id, category_id, product_id } = req.body;
 
     await pool.execute('UPDATE `products` SET `product_name`=?,`product_describe`=?,`quantity`=?,`price`=?,`product_image`=?,`view`=?,`brand_id`=?,`category_id`=? WHERE `product_id`=?',
-        [product_name, product_describe, quantity, price, product_image, view, brand_id, category_id]);
+        [product_name, product_describe, quantity, price, product_image, view, brand_id, category_id, product_id]);
 
     return res.redirect('/product-list');
 }

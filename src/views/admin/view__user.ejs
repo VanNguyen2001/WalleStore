@@ -1,72 +1,78 @@
 <%- include("header.ejs")%>
-<div class="container">
-  <h4>Thông tin người dùng</h4>
-          <form action="/update-user" method="POST" class="needs-validation">
-              <div class="form-group was-validated">
-                <label class="form-label" for="text">Họ và tên</label>
-                <input required type="text" class="form-control" placeholder="Nhập họ tên" name="name" value="<%= dataUser.name %>">
-              </div>
-              <div class="form-group was-validated">
-                <fieldset disabled>
-                  <label class="form-label" for="text">Giới tính</label>
-                  <input required type="text" class="form-control" name="gender" value="<%= dataUser.gender %>">
-                </div>
-              </fieldset>
-                <div class="form-group was-validated">
-                <fieldset disabled>
-                  <label class="form-label" for="text">Ngày sinh</label>
-                  <input type="text" class="form-control" name="birthDay" value="<%= dataUser.birthDay %>">
-                </div>
-                </fieldset>
-                <div class="form-group was-validated">
-                  <label class="form-label" for="number">Số điện thoại</label>
-                  <input required type="number" min="0" class="form-control" placeholder="Nhập số điện thoại" name="phone" value="<%= dataUser.phone %>">
-                </div>
-                <div class="form-group was-validated">
-                  <label class="form-label" for="text">Địa chỉ</label>
-                  <textarea required type="text" class="form-control" placeholder="Vui lòng không để trống địa chỉ liên hệ !" name="address"><%= dataUser.address %></textarea>
-                </div>
-                  <input hidden type="text" class="form-control" placeholder="Nhập mật khẩu" name="password" value="<%= dataUser.password %>">
-                  <input hidden type="text" class="form-control" placeholder="Chọn vai trò" name="role" value="<%= dataUser.role %>">
-              <input type="text" hidden value="<%= dataUser.id %>" name="id"/>
-              <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Cập nhật người dùng</h5>
-                    </div>
-                    <div class="modal-body">
-                      Bạn có chắc muốn thay đổi thông tin người dùng này không ?
-                    </div>
-                    <div class="modal-footer">
-                      <button type="submit" class="btn btn-info text-white">Có</button>
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-          </form>
-          <form action="/delete-user" method="post" class="pb-1">
-            <input type="text" hidden value="<%= dataUser.id %>" name="id"/>
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Xoá người dùng</h5>
-                  </div>
-                  <div class="modal-body">
-                    Bạn có chắc muốn xoá người dùng này không ?
-                  </div>
-                  <div class="modal-footer">
-                    <button type="submit" class="btn btn-danger">Có</button>
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
-                  </div>
-                </div>
-              </div>
+  <div class="container">
+    <h4>Thông tin người dùng</h4>
+    <form action="/update-user" method="POST" class="needs-validation">
+      <div class="form-group was-validated">
+        <label class="form-label" for="text">Họ và tên</label>
+        <input required type="text" class="form-control" placeholder="Nhập họ tên" name="name"
+          value="<%= dataUser.name %>">
+      </div>
+      <div class="form-group was-validated">
+        <fieldset disabled>
+          <label class="form-label" for="text">Giới tính</label>
+          <input required type="text" class="form-control" name="gender" value="<%= dataUser.gender %>">
+      </div>
+      </fieldset>
+      <div class="form-group was-validated">
+        <fieldset disabled>
+          <label class="form-label" for="text">Ngày sinh</label>
+          <input type="text" class="form-control" name="birthDay" value="<%= dataUser.birthDay %>">
+      </div>
+      </fieldset>
+      <div class="form-group was-validated">
+        <label class="form-label" for="number">Số điện thoại</label>
+        <input required type="number" min="0" class="form-control" placeholder="Nhập số điện thoại" name="phone"
+          value="<%= dataUser.phone %>">
+      </div>
+      <div class="form-group was-validated">
+        <label class="form-label" for="text">Địa chỉ</label>
+        <textarea required type="text" class="form-control" placeholder="Vui lòng không để trống địa chỉ liên hệ !"
+          name="address"><%= dataUser.address %></textarea>
+      </div>
+      <input hidden type="text" class="form-control" placeholder="Nhập mật khẩu" name="password"
+        value="<%= dataUser.password %>">
+      <input hidden type="text" class="form-control" placeholder="Chọn vai trò" name="role"
+        value="<%= dataUser.role %>">
+      <input type="text" hidden value="<%= dataUser.id %>" name="id" />
+
+      <div class="modal fade" id="exampleModall" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Cập nhật người dùng</h5>
             </div>
-          </form>
-          <a class="btn btn-outline-info"  data-bs-toggle="modal" data-bs-target="#exampleModall">Cập nhật</a>
-          <a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Xoá</a>
-          <a href="/" class="btn btn-outline-dark">Trở về</a>
-    </div>
-    <%- include("footer.ejs")%>  
+            <div class="modal-body">
+              Bạn có chắc muốn thay đổi thông tin người dùng này không ?
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-info text-white">Có</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <form action="/delete-user" method="post" class="pb-1">
+      <input type="text" hidden value="<%= dataUser.id %>" name="id" />
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Xoá người dùng</h5>
+            </div>
+            <div class="modal-body">
+              Bạn có chắc muốn xoá người dùng này không ?
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-danger">Có</button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <a class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#exampleModall">Cập nhật</a>
+    <a class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Xoá</a>
+    <a href="/" class="btn btn-outline-dark">Trở về</a>
+  </div>
+  <%- include("footer.ejs")%>
