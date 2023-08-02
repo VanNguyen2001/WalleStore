@@ -21,6 +21,7 @@
 
       <div class="signin-signup">
         <form action="/login" class="sign-in-form" method="post">
+<<<<<<< HEAD
           <% if (messages.error) { %>
             <div class="alert alert-danger" style="color: red;">
               <%= messages.error %>
@@ -35,12 +36,32 @@
                   <h2 class="title">Đăng Nhập</h2>
                   <div class="input-field">
                     <i class="fas fa-user"></i>
+=======
+          
+                  <h2 class="title">Đăng Nhập</h2>
+                  <div class="input-field">
+                    <i class="fa-solid fa-phone"></i>
+>>>>>>> 8d1124fd0dc7adacf926b300f75ad6113d767f3a
                     <input type="text" placeholder="Số điện thoại" name="phone" required />
                   </div>
                   <div class="input-field">
                     <i class="fas fa-lock"></i>
                     <input type="password" placeholder="Mật khẩu" name="password" required />
                   </div>
+<<<<<<< HEAD
+=======
+                  <% if (messages.error) { %>
+                    <div class="alert alert-danger" style="color: red;">
+                      <%= messages.error %>
+                    </div>
+                    <% } %>
+        
+                      <% if (messages.success) { %>
+                        <div class="alert alert-success">
+                          <%= messages.success %>
+                        </div>
+                        <% } %>
+>>>>>>> 8d1124fd0dc7adacf926b300f75ad6113d767f3a
                   <button type="submit" class="btn solid"> Đăng nhập</button>
                   <script>
 
@@ -49,12 +70,21 @@
         <form action="/signUp" class="sign-up-form" method="POST" onsubmit="return validateForm()">
           <h2 class="title">Đăng Ký</h2>
           <div class="input-field">
+<<<<<<< HEAD
             <i class="fas fa-envelope"></i>
             <input type="text" placeholder="Tên đăng nhập" id="name" name="name" required />
           </div>
           <p id="name-error" class="error-message" style="color: red;"></p>
           <div class="input-field">
             <i class="fas fa-user"></i>
+=======
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Họ và tên" id="name" name="name" required />
+          </div>
+          <p id="name-error" class="error-message" style="color: red;"></p>
+          <div class="input-field">
+            <i class="fa-solid fa-phone"></i>
+>>>>>>> 8d1124fd0dc7adacf926b300f75ad6113d767f3a
             <input type="text" placeholder="Số điện thoại" id="phone" name="phone" required />
           </div>
           <p id="phone-error" class="error-message" style="color: red;"></p>
@@ -63,10 +93,28 @@
             <input type="password" placeholder="Mật khẩu" id="password" name="password" required />
           </div>
           <p id="password-error" class="error-message" style="color: red;"></p>
+<<<<<<< HEAD
           <input hidden type="text" name="gender">
           <input hidden type="date" name="birthDay">
           <input hidden type="text" name="address">
           <input hidden type="text" name="role">
+=======
+          <div class="input-field">
+            <i class="fa-solid fa-calendar-days"></i>
+            <input type="date" id="name" name="birthDay" required value="2001-01-01"/>
+          </div>
+          <div class="">
+            <label style="padding-right: 10px;">Giới tính: </label>
+                <input type="radio" name="gender" value="Nam">
+                <label for="radio">Nam</label>
+                <input type="radio" name="gender" value="Nữ">
+                <label for="radio">Nữ</label>
+                <input type="radio" name="gender" value="Khác" checked>
+                <label for="louie">Khác</label>
+          </div>
+          <input hidden type="text" name="address">
+          <input hidden type="text" name="role" value="2">
+>>>>>>> 8d1124fd0dc7adacf926b300f75ad6113d767f3a
           <button type="submit" class="btn"> Đăng ký</button>
           <script>
             function validateForm() {
@@ -88,6 +136,7 @@
               }
 
               // Kiểm tra tên đăng nhập không chứa khoảng trắng
+<<<<<<< HEAD
               if (name.includes(" ")) {
                 nameError.innerHTML = "Tên đăng ký không được chứa khoảng trắng";
                 isValid = false;
@@ -104,6 +153,15 @@
                 phoneError.innerHTML = "Số điện thoại không được chứa khoảng trắng";
                 isValid = false;
               } else if (!/^\d{10}$/.test(phone)) {
+=======
+              // if (name.includes(" ")) {
+              //   nameError.innerHTML = "Tên đăng ký không được chứa khoảng trắng";
+              //   isValid = false;
+              //   return isValid;
+              // }
+
+              if (!/^\d{10}$/.test(phone)) {
+>>>>>>> 8d1124fd0dc7adacf926b300f75ad6113d767f3a
                 phoneError.innerHTML = "Số điện thoại bắt buộc phải có 10 số";
                 isValid = false;
               } else {

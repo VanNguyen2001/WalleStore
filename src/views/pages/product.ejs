@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- include("../partials/styles.ejs")%>
+	<title>WalleStore - Home</title>
+</head>
+<body>
+  <%- include("../partials/load.ejs")%>
+  <%- include("../partials/header.ejs")%>
+    <main class="main" id="main">
+        <div class="hamster" id="hot">
+            <div class="container hamster__data">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2 class="section__title category__title__ha">
+                            Sản Phẩm
+                        </h2>
+                    </div>
+                    <div class="row products__filters col-md-3">
+                        <div class="mx-auto pb-3">
+                            <div class="small fw-light">Tìm kiếm sản phẩm ở đây</div>
+                            <div class="input-group">
+                                <input class="form-control border-end-0 border rounded-pill" type="search" id="example-search-input">
+                                <span class="input-group-append">
+                                    <button class="btn btn-outline-secondary bg-white border-bottom-0 border rounded-pill ms-n5" type="button">
+                                        <i class="fa fa-search"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <% for(let i=0; i < dataCategory.length; i++) { %>
+                        <div class="products__item active-product row"  data-filter=".a<%= dataCategory[i].category_id %>">
+                            <div class="col-md-3"><img src="/img/<%= dataCategory[i].category_image %>" style="width: 30px; height: 30px;"></div>
+                            <div class="col-md-9"><h3 class="products__title"><%= dataCategory[i].category_name %></h3></div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="products__content grid row col-md-9">
+                        <!--==================== WW ====================-->
+                        <% for(let i=0; i < dataProduct.length; i++) { %>
+                        <article class="products__card a<%= dataProduct[i].category_id %> col-md-4">
+                            <div class="products__shape">
+                            <form class="text-center" action="/detail-product/<%= dataProduct[i].product_id %>" method="GET">
+                                <button type="submit" class="bg-white"><img src="/img/<%= dataProduct[i].product_image %>" alt="" class="products__img"></button>
+                            </form>
+                            </div>
+                            <div class="products__data">
+                                <h2 class="product__name"><%= dataProduct[i].product_name %></h2>
+                                <h3 class="products__price"><%= dataProduct[i].price %></h3>
+                                <h4 class="products__description"><%= dataProduct[i].product_describe %></h4>
+                                <button class="button products__button">
+                                    <i class='bx bx-shopping-bag'></i>
+                                </button>
+                            </div>
+                        </article>
+                        <% } %>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <%- include("../partials/footer.ejs")%>
+    <%- include("../partials/script.ejs")%>
+</body>
+</html>

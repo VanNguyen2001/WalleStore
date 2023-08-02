@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <%- include("../partials/styles.ejs")%>
+    <link rel="stylesheet" href="/css/product.css">
+	<title>WalleStore - Home</title>
+</head>
+<body>
+  <%- include("../partials/load.ejs")%>
+  <%- include("../partials/header.ejs")%>
+    <main class="main pt-5 pb-5" id="main">
+      <div class="container pt-5">
+        <div class="row">
+          <div class="col-md-6">
+            <img src="/img/<%= dataProduct.product_image %>" class="image__hover" id="image" width="100%" height="auto">
+          </div>
+          <div class="col-md-6">
+            <!-- Left Column / Headphones Image -->
+            <div class="left-column">
+              <img data-image="black" src="images/black.png" alt="">
+              <img data-image="blue" src="images/blue.png" alt="">
+              <img data-image="red" class="active" src="images/red.png" alt="">
+            </div>
+
+
+            <!-- Right Column -->
+            <div class="right-column">
+
+              <!-- Product Description -->
+              <div class="product-description">
+                <span>Headphones</span>
+                <h1><%= dataProduct.product_name %></h1>
+                <p><%= dataProduct.product_describe %></p>
+              </div>
+
+              <!-- Product Configuration -->
+              <div class="product-configuration">
+
+                <!-- Product Color -->
+                <div class="product-color">
+                  <span>Color</span>
+
+                  <div class="color-choose">
+                    <div>
+                      <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                      <label for="red"><span></span></label>
+                    </div>
+                    <div>
+                      <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                      <label for="blue"><span></span></label>
+                    </div>
+                    <div>
+                      <input data-image="black" type="radio" id="black" name="color" value="black">
+                      <label for="black"><span></span></label>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Cable Configuration -->
+                <div class="cable-config">
+                  <span>Cable configuration</span>
+
+                  <div class="cable-choose">
+                    <button>Straight</button>
+                    <button>Coiled</button>
+                    <button>Long-coiled</button>
+                  </div>
+
+                  <a href="#">How to configurate your headphones</a>
+                </div>
+              </div>
+
+              <!-- Product Pricing -->
+              <div class="product-price">
+                <span><%= dataProduct.price %> vnđ</span>
+                <a href="#" class="cart-btn">Add to cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <%- include("../partials/footer.ejs")%>
+    <%- include("../partials/script.ejs")%>
+</body>
+</html>

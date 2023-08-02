@@ -2,7 +2,7 @@ import mysql from 'mysql2/promise';
 
 // // create the connection to database
 
-console.log("Creating connection pool...");
+console.log("Đang kết nối...");
 
 const pool = mysql.createPool({
     host: 'localhost',

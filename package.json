@@ -16,13 +16,18 @@
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "1.20.2",
+<<<<<<< HEAD
     "connect-flash": "^0.1.1",
+=======
+    "dayjs": "^1.11.9",
+>>>>>>> 8d1124fd0dc7adacf926b300f75ad6113d767f3a
     "dotenv": "16.0.3",
     "ejs": "3.1.9",
     "errorhandler": "^1.5.1",
     "express": "4.18.2",
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
+<<<<<<< HEAD
     "jsonwebtoken": "^9.0.1",
     "mysql": "^2.18.1",
     "mysql2": "3.3.2",
@@ -30,5 +35,11 @@
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "sequelize": "^6.32.1"
+=======
+    "flash": "^1.1.0",
+    "mysql2": "3.3.2",
+    "nodemon": "2.0.22",
+    "session": "^0.1.0"
+>>>>>>> 8d1124fd0dc7adacf926b300f75ad6113d767f3a
   }
 }
