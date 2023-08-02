@@ -100,7 +100,10 @@
                 return isValid;
               }
 
-              if (!/^\d{10}$/.test(phone)) {
+              if (phone.includes(" ")) {
+                phoneError.innerHTML = "Số điện thoại không được chứa khoảng trắng";
+                isValid = false;
+              } else if (!/^\d{10}$/.test(phone)) {
                 phoneError.innerHTML = "Số điện thoại bắt buộc phải có 10 số";
                 isValid = false;
               } else {
