@@ -45,7 +45,9 @@ const initWebRoute = (app) => {
     router.get('/home', homeController.homePage);
     router.get('/login', homeController.loginPage);
     router.post('/signUp', userController.signUp);
+    router.post('/login', userController.login);
     router.get('/cart', homeController.cartPage);
+    router.get('/product', homeController.productPage);
     router.get('/detail-product/:product_id', homeController.getProductDetailPage);
     
     return app.use('/', router)

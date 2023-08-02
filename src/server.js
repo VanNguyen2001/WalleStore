@@ -7,9 +7,18 @@ import initApiRoute from './routes/api';
 require('dotenv').config();
 const app = express()
 const port = process.env.PORT;
+const flash = require('express-flash');
+const session = require('express-session');
 
 app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
+app.use(session({
+  secret: 'your_secret_key',
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(flash());
 
 configViewEngine(app)
 initWebRoute(app)

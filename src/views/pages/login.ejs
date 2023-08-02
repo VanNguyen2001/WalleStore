@@ -1,103 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/login.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="/img/wallestore-logo.png" type="image/x-icon">
-    <title>Đăng Nhập Và Đăng Ký</title>
-  </head>
-  <body>
-    <!-- <%- include("../partials/load.ejs")%> -->
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="#" class="sign-in-form">
-            <h2 class="title">Đăng Nhập</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Tên đăng nhập" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Mật khẩu" />
-            </div>
-            <input type="submit" value="Đăng Nhập" class="btn solid"/>
-          </form>
-          <form action="/signUp" class="sign-up-form" method="POST">
-            <h2 class="title">Đăng Ký</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Tên đăng nhập" name="name"/>
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="text" placeholder="Số điện thoại" name="phone"/>
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Mật khẩu" name="password"/>
-            </div>
-            <div class="form-group was-validated">
-              <label class="form-label" for="radio">Giới tính</label>
-              <fieldset class="row">
-                <div class="col-md-1">
-                  <input type="radio" name="gender" value="Nam">
-                  <label for="radio">Nam</label>
-                </div>
-                <div class="col-md-1">
-                  <input type="radio" name="gender" value="Nữ">
-                  <label for="radio">Nữ</label>
-                </div>
-                <div class="col-md-1">
-                  <input type="radio" name="gender" value="Khác" checked>
-                  <label for="louie">Khác</label>
-                </div>
-            </fieldset>
-            </div>
-              <input hidden type="date" name="birthDay">
-              <input hidden type="text" name="address">
-              <input hidden type="text" name="role">
-            <input type="submit" class="btn" value="Đăng Ký" />
-          </form>
-        </div>
-      </div>
 
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>Người mới hả ?</h3>
-            <p>
-              Tạo trước một tài khoản để dễ dàng mua hàng nào!
-            </p>
-            <button class="btn transparent" id="sign-up-btn">
-              Đăng Ký
-            </button>
-            <button class="btn transparent" onclick="window.location.href='/home'">
-              Về Cửa Hàng
-            </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/login.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="/img/wallestore-logo.png" type="image/x-icon">
+  <title>Đăng Nhập Và Đăng Ký</title>
+</head>
+
+<body>
+  <!-- <%- include("../partials/load.ejs")%> -->
+  <!-- <%- include("../partials/load.ejs")%> -->
+
+  <div class="container">
+    <div class="forms-container">
+
+      <div class="signin-signup">
+        <form action="/login" class="sign-in-form" method="post">
+          
+                  <h2 class="title">Đăng Nhập</h2>
+                  <div class="input-field">
+                    <i class="fa-solid fa-phone"></i>
+                    <input type="text" placeholder="Số điện thoại" name="phone" required />
+                  </div>
+                  <div class="input-field">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="Mật khẩu" name="password" required />
+                  </div>
+                  <% if (messages.error) { %>
+                    <div class="alert alert-danger" style="color: red;">
+                      <%= messages.error %>
+                    </div>
+                    <% } %>
+        
+                      <% if (messages.success) { %>
+                        <div class="alert alert-success">
+                          <%= messages.success %>
+                        </div>
+                        <% } %>
+                  <button type="submit" class="btn solid"> Đăng nhập</button>
+                  <script>
+
+                  </script>
+        </form>
+        <form action="/signUp" class="sign-up-form" method="POST" onsubmit="return validateForm()">
+          <h2 class="title">Đăng Ký</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="Họ và tên" id="name" name="name" required />
           </div>
-          <img src="img/login-img-1.png" class="image" alt="" />
-        </div>
-        <div class="panel right-panel">
-          <div class="content">
-            <h3>Có rồi ư ?</h3>
-            <p>
-              Nếu ban đã có tài khoản từ trước thì hãy thử đăng nhập qua tài khoản đó xem nào.
-            </p>
-            <button class="btn transparent" id="sign-in-btn">
-              Đăng Nhập
-            </button>
-            <button class="btn transparent" onclick="window.location.href='/home'">
-              Về Cửa Hàng
-            </button>
+          <p id="name-error" class="error-message" style="color: red;"></p>
+          <div class="input-field">
+            <i class="fa-solid fa-phone"></i>
+            <input type="text" placeholder="Số điện thoại" id="phone" name="phone" required />
           </div>
-          <img src="img/login-img-2.png" class="image" alt="" />
-        </div>
+          <p id="phone-error" class="error-message" style="color: red;"></p>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Mật khẩu" id="password" name="password" required />
+          </div>
+          <p id="password-error" class="error-message" style="color: red;"></p>
+          <div class="input-field">
+            <i class="fa-solid fa-calendar-days"></i>
+            <input type="date" id="name" name="birthDay" required value="2001-01-01"/>
+          </div>
+          <div class="">
+            <label style="padding-right: 10px;">Giới tính: </label>
+                <input type="radio" name="gender" value="Nam">
+                <label for="radio">Nam</label>
+                <input type="radio" name="gender" value="Nữ">
+                <label for="radio">Nữ</label>
+                <input type="radio" name="gender" value="Khác" checked>
+                <label for="louie">Khác</label>
+          </div>
+          <input hidden type="text" name="address">
+          <input hidden type="text" name="role" value="2">
+          <button type="submit" class="btn"> Đăng ký</button>
+          <script>
+            function validateForm() {
+              let name = document.getElementById("name").value;
+              let phone = document.getElementById("phone").value;
+              let password = document.getElementById("password").value;
+
+              let nameError = document.getElementById("name-error");
+              let phoneError = document.getElementById("phone-error");
+              let passwordError = document.getElementById("password-error");
+
+              let isValid = true;
+
+              if (name.length < 3) {
+                nameError.innerHTML = "Tên đăng ký phải có ít nhất 3 ký tự";
+                isValid = false;
+              } else {
+                nameError.innerHTML = "";
+              }
+
+              // Kiểm tra tên đăng nhập không chứa khoảng trắng
+              // if (name.includes(" ")) {
+              //   nameError.innerHTML = "Tên đăng ký không được chứa khoảng trắng";
+              //   isValid = false;
+              //   return isValid;
+              // }
+
+              if (!/^\d{10}$/.test(phone)) {
+                phoneError.innerHTML = "Số điện thoại bắt buộc phải có 10 số";
+                isValid = false;
+              } else {
+                phoneError.innerHTML = "";
+              }
+
+              if (password.length < 6) {
+                passwordError.innerHTML = "Mật khẩu phải có ít nhất 6 ký tự";
+                isValid = false;
+              } else {
+                passwordError.innerHTML = "";
+              }
+
+              // Check if registration is successful
+              if (isValid) {
+                // Perform registration logic here
+                // ...
+
+                // If registration is successful, display success message and redirect to login page
+                alert("Đăng ký thành công!");
+                window.location.href = "/login";
+              }
+
+              return isValid;
+            }
+          </script>
+          <!-- <script>
+            if (!/^\d{0,11}$/.test(phone.toString())) {
+              return res.redirect('/signup?errorMessage=' + encodeURIComponent('Phone number should not exceed 11 digits.'));
+            }
+          </script> -->
+          <!-- <p class="social-text">Đăng ký qua bên thứ hai</p>
+            <div class="social-media">
+              <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-google"></i>
+              </a>
+              <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div> -->
+        </form>
+
+
       </div>
     </div>
-    <script src="/js/login.js"></script>
-    <%- include("../partials/script.ejs")%>
-  </body>
+
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <h3>Người mới hả ?</h3>
+          <p>
+            Tạo trước một tài khoản để dễ dàng mua hàng nào!
+          </p>
+          <button class="btn transparent" id="sign-up-btn">
+            Đăng Ký
+          </button>
+          <button class="btn transparent" onclick="window.location.href='/home'">
+            Về Cửa Hàng
+          </button>
+        </div>
+        <img src="img/login-img-1.png" class="image" alt="" />
+      </div>
+      <div class="panel right-panel">
+        <div class="content">
+          <h3>Có rồi ư ?</h3>
+          <p>
+            Nếu ban đã có tài khoản từ trước thì hãy thử đăng nhập qua tài khoản đó xem nào.
+          </p>
+          <button class="btn transparent" id="sign-in-btn">
+            Đăng Nhập
+          </button>
+          <button class="btn transparent" onclick="window.location.href='/home'">
+            Về Cửa Hàng
+          </button>
+        </div>
+        <img src="img/login-img-2.png" class="image" alt="" />
+      </div>
+    </div>
+  </div>
+  <script src="/js/login.js"></script>
+  <%- include("../partials/script.ejs")%>
+</body>
+
 </html>

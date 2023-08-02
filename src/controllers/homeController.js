@@ -22,6 +22,12 @@ let getProductDetailPage = async (req, res) => {
     return res.render('pages/product__detail.ejs', { dataProduct: product[0] }); // x <- y
 }
 
+let productPage = async (req, res) => {
+    const [rows] = await pool.execute('SELECT * FROM categorys');
+    const [product] = await pool.execute('SELECT * FROM products');
+    return res.render('pages/product.ejs', { dataCategory: rows, dataProduct: product})
+}
+
 module.exports = {
-    homePage, loginPage, getProductDetailPage, cartPage
+    homePage, loginPage, getProductDetailPage, cartPage, productPage
 }
