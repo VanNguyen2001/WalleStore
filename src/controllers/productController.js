@@ -4,7 +4,7 @@ import pool from '../configs/connectDB';
 let getProductPage = async (req, res) => {
     const [rows] = await pool.execute('SELECT * FROM products');
 
-    return res.render('admin/list__product.ejs', { dataProduct: rows})
+    return res.render('admin/list__product.ejs', { dataProduct: rows })
 }
 
 let getDetailProductPage = async (req, res) => {
@@ -16,7 +16,7 @@ let getDetailProductPage = async (req, res) => {
 let addProduct = async (req, res) => {
     const [brand] = await pool.execute('SELECT * FROM brands');
     const [category] = await pool.execute('SELECT * FROM categorys');
-    return res.render('admin/add__product.ejs', {dataBrand: brand, dataCategory: category})
+    return res.render('admin/add__product.ejs', { dataBrand: brand, dataCategory: category })
 }
 
 let createNewProduct = async (req, res) => {
@@ -48,6 +48,7 @@ let postUpdateProduct = async (req, res) => {
 
     return res.redirect('/product-list');
 }
+
 
 module.exports = {
     getProductPage, getDetailProductPage, addProduct, createNewProduct, deleteProduct, getEditProductPage, postUpdateProduct

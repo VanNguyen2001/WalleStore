@@ -16,6 +16,7 @@ const initWebRoute = (app) => {
     router.get('/edit-user/:id', userController.editUser);
     router.post('/update-user', userController.updateUser);
 
+
     router.get('/add-brand', brandController.addBrand);
     router.get('/brand-list', brandController.getBrandPage);
     router.post('/create-new-brand', brandController.createNewBrand);
@@ -40,7 +41,6 @@ const initWebRoute = (app) => {
     router.get('/home', homeController.homePage);
     router.get('/login', homeController.loginPage);
     router.post('/signUp', userController.signUp);
-    
     return app.use('/', router)
 }
 

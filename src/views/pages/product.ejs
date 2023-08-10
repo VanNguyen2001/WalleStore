@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+
+    <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="./css/type.css">
+</head>
+
+<body>
+    <%- include("../partials/load.ejs")%>
+        <%- include("../partials/header.ejs")%>
+            <div class="container">
+                <div class="card">
+                    <div class="container-fliud">
+                        <div class="wrapper row">
+                            <div class="preview col-md-6">
+                                <div class="preview-pic tab-content">
+                                    <div class="tab-pane active" id="main-img">
+                                        <img src="./img/phone1.jpg" alt="" style="border-radius: 20px;"
+                                            data-zoom="./img/phone1-large.jpg">
+                                    </div>
+                                </div>
+                                <ul class=" preview-thumbnail nav nav-tabs">
+
+                                    <li class="hinhanh"><img src="./img/x2.webp" alt="">
+                                    </li>
+
+                                    <li class="hinhanh"><img src="./img/test1.png" alt="">
+                                    </li>
+                                    <li class="hinhanh"><img src="./img/phone1.jpg" alt="">
+                                    </li>
+                                    <li class="hinhanh"><img src="./img/phone1.jpg" alt="">
+                                    </li>
+                                    <li class="hinhanh"><img src="./img/x.png" alt="">
+                                    </li>
+
+                                </ul>
+
+
+                            </div>
+                            <div class="details col-md-6">
+                                <h3 class="product-title" style="color: blue;">iPhone 14 Pro Max 128GB </h3>
+                                <div class="rating">
+                                    <div class="stars"> <span class="fa fa-star checked"></span> <span
+                                            class="fa fa-star checked"></span> <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span> <span class="fa fa-star"></span>
+                                    </div> <span class="review-no">123 đánh giá</span>
+                                </div>
+                                <p class="product-description">iPhone 14 Pro Max một siêu phẩm trong giới smartphone
+                                    được nhà
+                                    Táo tung ra thị trường vào tháng 09/2022. Máy trang bị con chip Apple A16 Bionic vô
+                                    cùng
+                                    mạnh mẽ, đi kèm theo đó là thiết kế hình màn hình mới, hứa hẹn mang lại những trải
+                                    nghiệm
+                                    đầy mới mẻ cho người dùng iPhone.</p>
+                                <h7 class="price">t</h7>
+                                <p class="vote"><strong>91%</strong> of người mua hài lòng với sản phẩm này <strong>(87
+                                        bình
+                                        chọn)</strong>
+                                </p>
+                                <h2 class="sizes">29.790.000₫</h2>
+                                <h5 class="colors"> Phiên bản
+                                    <ul class=" preview-thumbnail nav nav-tabs">
+                                        <li class="hinhanh"><img src="./img/i2.jpg" alt="">
+                                        </li>
+                                        <li class="hinhanh"><img src="./img/i1.jpg" alt="">
+                                        </li>
+                                        <li class="hinhanh"><img src="./img/test2.jpg" alt="">
+                                        </li>
+
+                                    </ul>
+
+                                </h5>
+
+                                <div class="action"> <a href="#" target="_blank"> <button
+                                            class="add-to-cart btn btn-default" type="button">Thêm vào giỏ hàng</button>
+                                    </a>
+                                    <a href="#" target="_blank"> <button class="add-to-cart btn btn-default"
+                                            type="button">Mua
+                                            ngay</button> </a>
+                                    <a href="#" target="_blank"> <button class="like btn btn-default"
+                                            type="button"><span class="fa fa-heart"></span></button> </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onclick="showProductInfoForm()">Thông tin sản phẩm</button>
+                <button href="" onclick="showUserReviewForm()">Đánh giá người dùng</button>
+                <div id="product-info-form">
+                    <P>iPhone 14 Pro Max một siêu phẩm trong giới smartphone được nhà Táo tung ra thị trường vào tháng
+                        09/2022.
+                        Máy trang bị con chip Apple A16 Bionic vô cùng mạnh mẽ, đi kèm theo đó là thiết kế hình màn hình
+                        mới,
+                        hứa hẹn mang lại những trải nghiệm đầy mới mẻ cho người dùng iPhone.
+                        Thiết kế cao cấp bền bỉ
+                        iPhone năm nay sẽ được thừa hưởng nét đặc trưng từ người anh iPhone 13 Pro Max, vẫn sẽ là khung
+                        thép
+                        không gỉ và mặt lưng kính cường lực kết hợp với tạo hình vuông vức hiện đại thông qua cách tạo
+                        hình
+                        phẳng ở các cạnh và phần mặt lưng.</P>
+                    <img src="./img/i1.jpg" alt="">
+                    <p>Dòng Pro năm nay được ra mắt với nhiều tùy chọn màu sắc và trong đó nổi bật nhất có lẽ là phiên
+                        bản Deep
+                        Purple (tím), bởi vì đây là một màu mới nên mang lại độ nhận diện khá cao.
+
+                    </p>
+                    <img src="img/i2.jpg" alt="">
+                    <br>
+                    <b>
+                        <h4> Nổi bật với thiết kế màn hình mới</h4>
+                </div>
+
+                <div id="user-review-form">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label for="kh_ten">Tên người dùng</label>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="email" type="text" class="form-control" name="email"
+                                placeholder="Nhập Tên người dùng">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="kh_email">Email</label>
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                            <input id="email" type="text" class="form-control" name="email" placeholder="Nhập Email">
+                        </div>
+                        <div class="rating">
+                            <label> </label>
+                            <div class="rating">
+
+                                <input type="radio" name="rating" id="star5" value="5" />
+                                <label for="star5" data-rating-text="Rất hài lòng">&#9733;</label>
+
+                                <input type="radio" name="rating" id="star4" value="4" />
+                                <label for="star4" data-rating-text="Hài lòng">&#9733;</label>
+
+                                <input type="radio" name="rating" id="star3" value="3" />
+                                <label for="star3" data-rating-text="Ổn">&#9733;</label>
+
+                                <input type="radio" name="rating" id="star2" value="2" />
+                                <label for="star2" data-rating-text="Tệ">&#9733;</label>
+
+                                <input type="radio" name="rating" id="star1" value="1" />
+                                <label for="star1" data-rating-text="Rất tệ">&#9733;</label>
+                            </div>
+
+                            <div id="rating-text"></div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="kh_email">Đánh giá sản phẩm</label>
+                            <span class="input-group-addon"></span>
+                            <textarea class="form-control" aria-label="With textarea"></textarea>
+                        </div>
+                    </div>
+                    <button type="submit">Gửi đánh giá</button>
+                </div>
+                </form>
+                </p>
+            </div>
+            </div>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                $(function () {
+                    $('ul.preview-thumbnail li.hinhanh').click(function () {
+                        var imgPath = $(this).find('img').attr('src');
+                        $('#main-img img').attr('src', imgPath);
+                    });
+                });
+            </script>
+            <script>
+                $('#main-img').mouseenter(function () {
+                    var zoom = $(this).find('img').data('zoom');
+                    $(this).css('background-image', 'url(' + zoom + ')');
+                }).mouseleave(function () {
+                    $(this).css('background-image', 'none');
+                });
+            </script>
+            <script>
+                function showProductInfoForm() {
+                    var productInfoForm = document.getElementById("product-info-form");
+                    var userReviewForm = document.getElementById("user-review-form");
+
+                    productInfoForm.style.display = "block";
+                    userReviewForm.style.display = "none";
+                }
+
+                function showUserReviewForm() {
+                    var productInfoForm = document.getElementById("product-info-form");
+                    var userReviewForm = document.getElementById("user-review-form");
+
+                    productInfoForm.style.display = "none";
+                    userReviewForm.style.display = "block";
+                }
+            </script>
+            <script>
+                const stars = document.querySelectorAll('.rating input');
+                const ratingText = document.getElementById('rating-text');
+
+                stars.forEach((star, index) => {
+                    star.addEventListener('click', () => {
+                        // Uncheck all stars
+                        stars.forEach((s) => {
+                            s.checked = false;
+                        });
+
+                        // Check the clicked star and all previous ones
+                        let i = index;
+                        while (stars[i] !== stars[0]) {
+                            stars[i].checked = true;
+                            i--;
+                        }
+
+                        // Mark the clicked star as active
+                        star.checked = true;
+
+                        // Show the corresponding rating text
+                        ratingText.textContent = star.nextElementSibling.getAttribute('data-rating-text');
+                    });
+                });
+            </script>
+            <%- include("../partials/footer.ejs")%>
+                <%- include("../partials/script.ejs")%>
+</body>
+
+</html>
